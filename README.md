@@ -30,7 +30,7 @@
 | Regulatory compliance requires explainability | Every score traces to Euclidean distances and cosine similarities in $R^n$ |
 | One method does not fit all use cases | SGI for RAG/context verification, DGI for context-free chat, `evaluate()` auto-selects |
 
-`SGI`:Semantic Grounding Index | `DGI`:Directional Grounding Index
+`SGI`: Semantic Grounding Index | `DGI`: Directional Grounding Index
 
 
 ## Installation
