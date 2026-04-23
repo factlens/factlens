@@ -1,0 +1,30 @@
+name: Weekly Benchmark
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"   # Sunday 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    name: Confabulation Benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run benchmark
+        run: python benchmarks/confabulation_benchmark.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-${{ github.run_id }}
+          path: benchmarks/results/
+          retention-days: 90

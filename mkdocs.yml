@@ -1,0 +1,147 @@
+site_name: factlens
+site_description: Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable.
+site_author: Javier Marin
+site_url: https://javihaus.github.io/factlens/
+repo_url: https://github.com/factlens/factlens
+repo_name: factlens/factlens
+
+copyright: Copyright &copy; 2025-2026 Javier Marin
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            show_source: true
+            show_root_heading: true
+            show_category_heading: true
+            members_order: source
+            docstring_style: google
+            merge_init_into_class: true
+            show_signature_annotations: true
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quickstart: getting-started/quickstart.md
+    - CLI Reference: getting-started/cli.md
+  - Concepts:
+    - How It Works: concepts/how-it-works.md
+    - "SGI: Semantic Grounding Index": concepts/sgi.md
+    - "DGI: Directional Grounding Index": concepts/dgi.md
+    - Calibration: concepts/calibration.md
+  - Theory:
+    - Embedding Geometry: theory/embedding-geometry.md
+    - SGI Mathematics: theory/sgi-mathematics.md
+    - DGI Mathematics: theory/dgi-mathematics.md
+    - Confabulation Boundary: theory/confabulation-boundary.md
+  - Guides:
+    - RAG Verification: guides/rag-verification.md
+    - Domain Calibration: guides/domain-calibration.md
+    - Batch Evaluation: guides/batch-evaluation.md
+    - EU AI Act Compliance: guides/eu-ai-act.md
+  - Providers:
+    - OpenAI: providers/openai.md
+    - Anthropic: providers/anthropic.md
+    - Google Gemini: providers/google.md
+  - Integrations:
+    - LangChain: integrations/langchain.md
+    - CrewAI: integrations/crewai.md
+    - Semantic Kernel: integrations/semantic-kernel.md
+    - AutoGen: integrations/autogen.md
+  - Benchmarks:
+    - Overview: benchmarks/overview.md
+    - Results: benchmarks/results.md
+  - API Reference: api/index.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/factlens/factlens
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/factlens/
+  generator: false
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css: []

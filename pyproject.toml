@@ -1,0 +1,206 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "factlens"
+version = "2026.4.22"
+description = "Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Javier Marin", email = "javier@jmarin.info" },
+]
+keywords = [
+    "hallucination-detection",
+    "llm-evaluation",
+    "embedding-geometry",
+    "grounding",
+    "rag",
+    "ai-safety",
+    "sgi",
+    "dgi",
+    "eu-ai-act",
+    "factual-accuracy",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Quality Assurance",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "sentence-transformers>=2.7.0,<4.0.0",
+]
+
+[project.optional-dependencies]
+
+# LLM provider connectors
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.25.0"]
+google = ["google-generativeai>=0.5.0"]
+
+# Framework integrations
+langchain = ["langchain-core>=0.3.0", "langsmith>=0.1.0"]
+crewai = ["crewai>=0.80.0"]
+semantic-kernel = ["semantic-kernel>=1.0.0"]
+autogen = ["autogen-agentchat>=0.4.0"]
+
+# Bundles
+providers = ["factlens[openai,anthropic,google]"]
+integrations = ["factlens[langchain,crewai,semantic-kernel,autogen]"]
+all = ["factlens[providers,integrations]"]
+
+# Development
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pytest-mock>=3.12",
+    "mypy>=1.10",
+    "ruff>=0.5.0",
+    "pre-commit>=3.7",
+    "pip-audit>=2.7",
+]
+
+# Documentation
+docs = [
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+    "mkdocs-gen-files>=0.5",
+    "mkdocs-literate-nav>=0.6",
+]
+
+[project.scripts]
+factlens = "factlens.cli.main:main"
+
+[project.urls]
+Homepage = "https://factlens.dev"
+Documentation = "https://docs.factlens.dev"
+Repository = "https://github.com/factlens/factlens"
+Issues = "https://github.com/factlens/factlens/issues"
+Changelog = "https://github.com/factlens/factlens/blob/main/CHANGELOG.md"
+"Research (SGI)" = "https://arxiv.org/abs/2512.13771"
+"Research (DGI)" = "https://arxiv.org/abs/2602.13224"
+"Research (Confabulation Benchmark)" = "https://arxiv.org/abs/2603.13259"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/factlens"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/factlens", "tests", "LICENSE", "README.md"]
+
+# ── Ruff (lint + format) ────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 99
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # pep8-naming
+    "D",      # pydocstyle
+    "UP",     # pyupgrade
+    "ANN",    # flake8-annotations
+    "B",      # flake8-bugbear
+    "A",      # flake8-builtins
+    "C4",     # flake8-comprehensions
+    "DTZ",    # flake8-datetimez
+    "T20",    # flake8-print
+    "PT",     # flake8-pytest-style
+    "SIM",    # flake8-simplify
+    "TCH",    # flake8-type-checking
+    "RUF",    # Ruff-specific rules
+]
+ignore = [
+    "D100",   # Missing docstring in public module (covered by __init__)
+    "D104",   # Missing docstring in public package
+    "D107",   # Missing docstring in __init__ (class docstring is enough)
+    "ANN401", # Dynamically typed expressions (Any) disallowed — too strict for integrations
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["factlens"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["D", "ANN", "T20"]          # Relaxed for tests
+"examples/**/*.py" = ["D", "ANN", "T20"]       # Relaxed for examples
+"benchmarks/**/*.py" = ["D", "ANN", "T20"]
+"src/factlens/cli/**/*.py" = ["T20"]           # CLI needs print
+
+# ── mypy (strict) ───────────────────────────────────────────────────────────
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+
+[[tool.mypy.overrides]]
+module = [
+    "sentence_transformers.*",
+    "openai.*",
+    "anthropic.*",
+    "google.generativeai.*",
+    "langchain_core.*",
+    "langsmith.*",
+    "crewai.*",
+    "semantic_kernel.*",
+    "autogen.*",
+    "datasets.*",
+    "sklearn.*",
+    "google.*",
+]
+ignore_missing_imports = true
+follow_imports = "skip"
+
+# ── pytest ───────────────────────────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests that load embedding models (deselect with '-m \"not slow\"')",
+    "integration: marks tests requiring external services",
+]
+addopts = [
+    "--strict-markers",
+    "-ra",
+]
+
+# ── coverage ─────────────────────────────────────────────────────────────────
+
+[tool.coverage.run]
+source = ["factlens"]
+omit = ["*/cli/*", "*/data/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.",
+    "@overload",
+    "raise NotImplementedError",
+]
+fail_under = 85
