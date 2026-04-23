@@ -1,16 +1,10 @@
 <div align="center">
+  <img src="docs/assets/FactLens_header_01.png" alt="factlens" width="800">
+</div>
 
-```
-  __            _   _
- / _| __ _  ___| |_| | ___ _ __  ___
-| |_ / _` |/ __| __| |/ _ \ '_ \/ __|
-|  _| (_| | (__| |_| |  __/ | | \__ \
-|_|  \__,_|\___|\__|_|\___|_| |_|___/
-```
+# Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable.
 
-**Geometric LLM hallucination detection.**
 
-No second LLM. Deterministic. Auditable.
 
 [![PyPI version](https://img.shields.io/pypi/v/factlens?color=blue)](https://pypi.org/project/factlens/)
 [![Python versions](https://img.shields.io/pypi/pyversions/factlens)](https://pypi.org/project/factlens/)
@@ -25,9 +19,9 @@ No second LLM. Deterministic. Auditable.
 
 ---
 
-**factlens** detects LLM hallucinations using embedding geometry instead of a second LLM. It computes deterministic, auditable scores from the spatial relationships between questions, responses, and source context in an embedding space. The result is a verification signal you can explain in an audit, reproduce on demand, and run in regulated environments.
+***factlens*** detects LLM hallucinations using embedding geometry instead of a second LLM. It computes deterministic, auditable scores from the spatial relationships between questions, responses, and source context in an embedding space. The result is a verification signal you can explain in an audit, reproduce on demand, and run in regulated environments.
 
-## Why factlens?
+## Why ***factlens***?
 
 | Problem | How factlens solves it |
 |---|---|
