@@ -6,10 +6,11 @@
 
 
 
-[![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12%20|%203.13-blue)](https://github.com/factlens/factlens)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/ci.yml?branch=main&label=CI)](https://github.com/factlens/factlens/actions)
-[![Docs](https://img.shields.io/badge/docs-docs.factlens.dev-blue)](https://docs.factlens.dev)
+[![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12%20|%203.13-blue?style=flat-square)](https://github.com/factlens/factlens)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+[![CI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/factlens/factlens/actions)
+[![Docs](https://img.shields.io/badge/docs-docs.factlens.dev-blue?style=flat-square)](https://docs.factlens.dev)
+[![Version](https://img.shields.io/badge/version-2026.4.22-orange?style=flat-square)](https://github.com/factlens/factlens/releases)
 
 [Documentation](https://docs.factlens.dev) | [Research Papers](#research) | [Examples](examples/) | [Contributing](CONTRIBUTING.md)
 
