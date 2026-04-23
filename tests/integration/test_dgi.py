@@ -11,7 +11,6 @@ import pytest
 
 from factlens.dgi import compute_dgi, reset_calibration_cache
 
-
 pytestmark = pytest.mark.slow
 
 
@@ -65,7 +64,10 @@ class TestComputeDgiNormalizedRange:
         pairs = [
             ("What is gravity?", "Gravity is a fundamental force of attraction between masses."),
             ("Who wrote Hamlet?", "William Shakespeare wrote Hamlet around 1600."),
-            ("What is DNA?", "DNA is deoxyribonucleic acid, the molecule carrying genetic instructions."),
+            (
+                "What is DNA?",
+                "DNA is deoxyribonucleic acid, the molecule carrying genetic instructions.",
+            ),
         ]
         for q, r in pairs:
             result = compute_dgi(question=q, response=r)

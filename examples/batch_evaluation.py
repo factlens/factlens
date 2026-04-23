@@ -46,10 +46,11 @@ if __name__ == "__main__":
 
     results = evaluate_batch(items)
 
-    for item, score in zip(items, results):
+    for item, score in zip(items, results, strict=False):
         flag_marker = "FLAGGED" if score.flagged else "ok"
-        print(f"[{flag_marker:>7}] {score.method.upper()} {score.value:+.3f}  "
-              f"Q: {item['question'][:50]}")
+        print(
+            f"[{flag_marker:>7}] {score.method.upper()} {score.value:+.3f}  "
+            f"Q: {item['question'][:50]}"
+        )
 
-    print(f"\nTotal: {len(results)}  "
-          f"Flagged: {sum(1 for r in results if r.flagged)}")
+    print(f"\nTotal: {len(results)}  Flagged: {sum(1 for r in results if r.flagged)}")

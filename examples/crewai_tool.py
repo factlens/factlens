@@ -74,8 +74,14 @@ if __name__ == "__main__":
     print("Agent verifying a grounded response:\n")
     result = tool._run(
         question="What is the function of mitochondria?",
-        response="Mitochondria are the powerhouses of the cell, producing ATP through oxidative phosphorylation.",
-        context="Mitochondria generate most of the cell's supply of ATP, used as a source of chemical energy.",
+        response=(
+            "Mitochondria are the powerhouses of the cell,"
+            " producing ATP through oxidative phosphorylation."
+        ),
+        context=(
+            "Mitochondria generate most of the cell's supply of ATP,"
+            " used as a source of chemical energy."
+        ),
     )
     print(result)
 

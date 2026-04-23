@@ -11,7 +11,6 @@ import pytest
 
 from factlens.sgi import compute_sgi
 
-
 pytestmark = pytest.mark.slow
 
 

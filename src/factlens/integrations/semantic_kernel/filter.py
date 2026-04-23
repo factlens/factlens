@@ -21,7 +21,6 @@ if TYPE_CHECKING:
     from collections.abc import Awaitable, Callable
 
     from factlens.score import FactlensScore
-    pass
 
 logger = logging.getLogger(__name__)
 

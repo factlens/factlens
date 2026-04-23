@@ -2,16 +2,19 @@
 
 from __future__ import annotations
 
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
 from factlens._internal.csv_loader import _load_user_csv
 
+if TYPE_CHECKING:
+    from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # Comma-delimited CSV
 # ---------------------------------------------------------------------------
+
 
 class TestLoadUserCsvComma:
     """Test _load_user_csv with comma-delimited files."""
@@ -31,8 +34,7 @@ class TestLoadUserCsvComma:
     def test_answer_column_name(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,answer\n"
-            "What is X?,X is Y.\n",
+            "question,answer\nWhat is X?,X is Y.\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -42,8 +44,7 @@ class TestLoadUserCsvComma:
     def test_output_column_name(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,output\n"
-            "What is X?,X is Y.\n",
+            "question,output\nWhat is X?,X is Y.\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -52,8 +53,7 @@ class TestLoadUserCsvComma:
     def test_grounded_response_column_name(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,grounded_response\n"
-            "What is X?,X is Y.\n",
+            "question,grounded_response\nWhat is X?,X is Y.\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -62,11 +62,7 @@ class TestLoadUserCsvComma:
     def test_skips_empty_rows(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,response\n"
-            "What is X?,X is Y.\n"
-            ",\n"
-            "  ,  \n"
-            "What is Z?,Z is W.\n",
+            "question,response\nWhat is X?,X is Y.\n,\n  ,  \nWhat is Z?,Z is W.\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -75,8 +71,7 @@ class TestLoadUserCsvComma:
     def test_extra_columns_ignored(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,response,category,notes\n"
-            "What is X?,X is Y.,science,verified\n",
+            "question,response,category,notes\nWhat is X?,X is Y.,science,verified\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -87,6 +82,7 @@ class TestLoadUserCsvComma:
 # ---------------------------------------------------------------------------
 # Semicolon-delimited CSV
 # ---------------------------------------------------------------------------
+
 
 class TestLoadUserCsvSemicolon:
     """Test _load_user_csv with semicolon-delimited files."""
@@ -105,8 +101,7 @@ class TestLoadUserCsvSemicolon:
     def test_semicolon_with_commas_in_values(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question;response\n"
-            "What is Python?;Python is a language, created by Guido.\n",
+            "question;response\nWhat is Python?;Python is a language, created by Guido.\n",
             encoding="utf-8",
         )
         pairs = _load_user_csv(str(csv_file))
@@ -118,14 +113,14 @@ class TestLoadUserCsvSemicolon:
 # Error cases
 # ---------------------------------------------------------------------------
 
+
 class TestLoadUserCsvErrors:
     """Test error handling in _load_user_csv."""
 
     def test_missing_question_column_raises_value_error(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "bad.csv"
         csv_file.write_text(
-            "prompt,response\n"
-            "What is X?,X is Y.\n",
+            "prompt,response\nWhat is X?,X is Y.\n",
             encoding="utf-8",
         )
         with pytest.raises(ValueError, match="question"):
@@ -134,8 +129,7 @@ class TestLoadUserCsvErrors:
     def test_missing_response_column_raises_value_error(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "bad.csv"
         csv_file.write_text(
-            "question,text\n"
-            "What is X?,X is Y.\n",
+            "question,text\nWhat is X?,X is Y.\n",
             encoding="utf-8",
         )
         with pytest.raises(ValueError, match="response column"):
@@ -163,10 +157,7 @@ class TestLoadUserCsvErrors:
     def test_whitespace_only_values_treated_as_empty(self, tmp_path: Path) -> None:
         csv_file = tmp_path / "data.csv"
         csv_file.write_text(
-            "question,response\n"
-            "   ,   \n"
-            "   ,Some answer\n"
-            "Some question,   \n",
+            "question,response\n   ,   \n   ,Some answer\nSome question,   \n",
             encoding="utf-8",
         )
         with pytest.raises(ValueError, match="No valid pairs"):

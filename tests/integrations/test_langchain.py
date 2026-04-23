@@ -54,9 +54,7 @@ class TestFactlensCallback:
             try:
                 from factlens.integrations.langchain import FactlensCallback
 
-                with patch(
-                    "factlens.integrations.langchain.callback.evaluate"
-                ) as mock_eval:
+                with patch("factlens.integrations.langchain.callback.evaluate") as mock_eval:
                     mock_score = MagicMock()
                     mock_score.flagged = False
                     mock_score.value = 0.8

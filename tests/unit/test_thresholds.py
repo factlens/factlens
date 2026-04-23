@@ -12,10 +12,10 @@ from factlens._internal.thresholds import (
     normalize_sgi,
 )
 
-
 # ---------------------------------------------------------------------------
 # Threshold constant ordering
 # ---------------------------------------------------------------------------
+
 
 class TestThresholdConstants:
     """Verify threshold constants are correctly ordered and valued."""
@@ -43,6 +43,7 @@ class TestThresholdConstants:
 # ---------------------------------------------------------------------------
 # normalize_sgi
 # ---------------------------------------------------------------------------
+
 
 class TestNormalizeSgi:
     """Tests for normalize_sgi()."""
@@ -79,7 +80,7 @@ class TestNormalizeSgi:
         for i in range(len(normalized) - 1):
             assert normalized[i] <= normalized[i + 1], (
                 f"Not monotonic: normalize_sgi({values[i]})={normalized[i]} > "
-                f"normalize_sgi({values[i+1]})={normalized[i+1]}"
+                f"normalize_sgi({values[i + 1]})={normalized[i + 1]}"
             )
 
     def test_negative_sgi_returns_zero(self) -> None:
@@ -93,6 +94,7 @@ class TestNormalizeSgi:
 # ---------------------------------------------------------------------------
 # normalize_dgi
 # ---------------------------------------------------------------------------
+
 
 class TestNormalizeDgi:
     """Tests for normalize_dgi()."""

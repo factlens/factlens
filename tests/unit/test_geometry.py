@@ -13,10 +13,10 @@ from factlens._internal.geometry import (
     unit_normalize,
 )
 
-
 # ---------------------------------------------------------------------------
 # euclidean_distance
 # ---------------------------------------------------------------------------
+
 
 class TestEuclideanDistance:
     """Tests for euclidean_distance()."""
@@ -64,6 +64,7 @@ class TestEuclideanDistance:
 # unit_normalize
 # ---------------------------------------------------------------------------
 
+
 class TestUnitNormalize:
     """Tests for unit_normalize()."""
 
@@ -97,7 +98,8 @@ class TestUnitNormalize:
         v = np.array([-3.0, -4.0], dtype=np.float32)
         result = unit_normalize(v)
         assert float(np.linalg.norm(result)) == pytest.approx(1.0, abs=1e-6)
-        assert result[0] < 0 and result[1] < 0
+        assert result[0] < 0
+        assert result[1] < 0
 
     def test_high_dimensional(self) -> None:
         rng = np.random.default_rng(3)
@@ -109,6 +111,7 @@ class TestUnitNormalize:
 # ---------------------------------------------------------------------------
 # displacement_vector
 # ---------------------------------------------------------------------------
+
 
 class TestDisplacementVector:
     """Tests for displacement_vector()."""
@@ -141,6 +144,7 @@ class TestDisplacementVector:
 # ---------------------------------------------------------------------------
 # cosine_similarity
 # ---------------------------------------------------------------------------
+
 
 class TestCosineSimilarity:
     """Tests for cosine_similarity()."""
@@ -196,6 +200,7 @@ class TestCosineSimilarity:
 # ---------------------------------------------------------------------------
 # mean_direction
 # ---------------------------------------------------------------------------
+
 
 class TestMeanDirection:
     """Tests for mean_direction()."""

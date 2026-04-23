@@ -7,10 +7,10 @@ import pytest
 from factlens._internal.thresholds import DGI_PASS, SGI_REVIEW, SGI_STRONG_PASS
 from factlens.score import DGIResult, FactlensScore, SGIResult
 
-
 # ---------------------------------------------------------------------------
 # SGIResult
 # ---------------------------------------------------------------------------
+
 
 class TestSGIResult:
     """Tests for the SGIResult frozen dataclass."""
@@ -80,6 +80,7 @@ class TestSGIResult:
 # DGIResult
 # ---------------------------------------------------------------------------
 
+
 class TestDGIResult:
     """Tests for the DGIResult frozen dataclass."""
 
@@ -131,6 +132,7 @@ class TestDGIResult:
 # ---------------------------------------------------------------------------
 # FactlensScore
 # ---------------------------------------------------------------------------
+
 
 class TestFactlensScore:
     """Tests for the FactlensScore frozen dataclass."""

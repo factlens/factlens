@@ -14,13 +14,10 @@ Example:
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
 from factlens.evaluate import evaluate
 from factlens.providers._base import LLMResponse
-
-if TYPE_CHECKING:
-    import google.generativeai as genai
 
 logger = logging.getLogger(__name__)
 

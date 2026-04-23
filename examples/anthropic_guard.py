@@ -19,9 +19,9 @@ def anthropic_with_factlens(question: str, context: str | None = None) -> None:
     """Call Anthropic Claude and score the response with factlens."""
     try:
         import anthropic
-    except ImportError:
+    except ImportError as err:
         print("Install anthropic: pip install factlens[anthropic]")
-        raise SystemExit(1)
+        raise SystemExit(1) from err
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:

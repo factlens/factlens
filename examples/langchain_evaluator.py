@@ -10,8 +10,12 @@ Demonstrates using FactlensEvaluator as a custom evaluator within
 LangSmith's ``evaluate()`` function for systematic LLM evaluation.
 """
 
+from typing import TYPE_CHECKING
+
 from factlens.evaluate import evaluate
-from factlens.score import FactlensScore
+
+if TYPE_CHECKING:
+    from factlens.score import FactlensScore
 
 
 class FactlensEvaluator:

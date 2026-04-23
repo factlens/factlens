@@ -37,14 +37,14 @@ if __name__ == "__main__":
         pairs=medical_pairs,
         metadata={"domain": "medical", "source": "manual_review"},
     )
-    print(f"Calibration complete:")
+    print("Calibration complete:")
     print(f"  Pairs:         {result.n_pairs}")
     print(f"  Embedding dim: {result.embedding_dim}")
     print(f"  Concentration: {result.concentration:.2f}")
 
     # Step 3: Save calibration for reproducibility.
     result.save("medical_calibration.json")
-    print(f"  Saved to:      medical_calibration.json\n")
+    print("  Saved to:      medical_calibration.json\n")
 
     # Step 4: Use the calibrated DGI scorer.
     dgi = DGI()

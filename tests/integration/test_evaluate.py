@@ -11,7 +11,6 @@ import pytest
 from factlens.evaluate import evaluate, evaluate_batch
 from factlens.score import DGIResult, SGIResult
 
-
 pytestmark = pytest.mark.slow
 
 

@@ -71,9 +71,7 @@ class TestFactlensOpenAIChat:
 
             mock_openai_client.chat.completions.create.assert_called_once()
 
-    def test_chat_with_context_passes_to_evaluate(
-        self, mock_openai_client: MagicMock
-    ) -> None:
+    def test_chat_with_context_passes_to_evaluate(self, mock_openai_client: MagicMock) -> None:
         with (
             patch.object(openai_mod, "_get_openai_client", return_value=mock_openai_client),
             patch.object(openai_mod, "evaluate") as mock_evaluate,
@@ -118,6 +116,5 @@ class TestFactlensOpenAIImportError:
     """Test ImportError when openai is not installed."""
 
     def test_import_error_message(self) -> None:
-        with patch.dict(sys.modules, {"openai": None}):
-            with pytest.raises(ImportError, match="openai"):
-                openai_mod._get_openai_client("sk-test")
+        with patch.dict(sys.modules, {"openai": None}), pytest.raises(ImportError, match="openai"):
+            openai_mod._get_openai_client("sk-test")

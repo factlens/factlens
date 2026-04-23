@@ -79,10 +79,7 @@ class FactlensFilter:
         }
 
         if self.block_on_flag and score.flagged:
-            msg = (
-                f"Factlens blocked response: {score.explanation} "
-                f"(score={score.value:.3f})"
-            )
+            msg = f"Factlens blocked response: {score.explanation} (score={score.value:.3f})"
             raise RuntimeError(msg)
 
         return result

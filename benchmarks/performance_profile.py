@@ -55,7 +55,9 @@ DGI_CASES = [
     },
     {
         "question": "Who developed the theory of relativity?",
-        "response": "Albert Einstein developed the theory of relativity in the early 20th century.",
+        "response": (
+            "Albert Einstein developed the theory of relativity in the early 20th century."
+        ),
     },
     {
         "question": "What is machine learning?",

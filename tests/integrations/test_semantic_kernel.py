@@ -50,9 +50,7 @@ class TestFactlensFilter:
             try:
                 from factlens.integrations.semantic_kernel import FactlensFilter
 
-                with patch(
-                    "factlens.integrations.semantic_kernel.filter.evaluate"
-                ) as mock_eval:
+                with patch("factlens.integrations.semantic_kernel.filter.evaluate") as mock_eval:
                     mock_score = MagicMock()
                     mock_score.flagged = False
                     mock_score.normalized = 0.8
@@ -70,7 +68,7 @@ class TestFactlensFilter:
                         filt.on_function_invocation(mock_context)
                     elif hasattr(filt, "filter"):
                         filt.filter(mock_context)
-                    elif hasattr(filt, "__call__"):
+                    elif callable(filt):
                         filt(mock_context)
                     else:
                         # Just verify the filter was created successfully
@@ -90,9 +88,7 @@ class TestFactlensFilter:
             try:
                 from factlens.integrations.semantic_kernel import FactlensFilter
 
-                with patch(
-                    "factlens.integrations.semantic_kernel.filter.evaluate"
-                ) as mock_eval:
+                with patch("factlens.integrations.semantic_kernel.filter.evaluate") as mock_eval:
                     mock_score = MagicMock()
                     mock_score.flagged = True
                     mock_score.normalized = 0.2

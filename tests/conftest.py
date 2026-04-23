@@ -2,17 +2,19 @@
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 from unittest.mock import MagicMock, patch
 
 import numpy as np
 import pytest
-from numpy.typing import NDArray
 
+if TYPE_CHECKING:
+    from numpy.typing import NDArray
 
 # ---------------------------------------------------------------------------
 # Embedding model fixture (session-scoped, loads once)
 # ---------------------------------------------------------------------------
+
 
 @pytest.fixture(scope="session")
 def embedding_model():
@@ -31,7 +33,8 @@ def embedding_model():
 # Mock fixtures for API / embedding calls
 # ---------------------------------------------------------------------------
 
-@pytest.fixture()
+
+@pytest.fixture
 def mock_encode_texts():
     """Patch ``encode_texts`` to return deterministic fake embeddings.
 
@@ -48,7 +51,7 @@ def mock_encode_texts():
         yield m
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_openai_client():
     """Return a mock that mimics ``openai.OpenAI().chat.completions.create``."""
     mock_client = MagicMock()
@@ -63,7 +66,7 @@ def mock_openai_client():
     return mock_client
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_anthropic_client():
     """Return a mock that mimics the Anthropic messages API."""
     mock_client = MagicMock()
@@ -77,7 +80,7 @@ def mock_anthropic_client():
     return mock_client
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_google_client():
     """Return a mock that mimics the Google Generative AI client."""
     mock_client = MagicMock()
@@ -91,27 +94,26 @@ def mock_google_client():
 # Sample data fixtures
 # ---------------------------------------------------------------------------
 
-@pytest.fixture()
+
+@pytest.fixture
 def grounded_triple() -> dict[str, str]:
     """A question-context-response triple where the response is grounded."""
     return {
         "question": "What is the capital of France?",
         "context": (
-            "France is a country in Western Europe. "
-            "Its capital and largest city is Paris."
+            "France is a country in Western Europe. Its capital and largest city is Paris."
         ),
         "response": "The capital of France is Paris.",
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def hallucinated_triple() -> dict[str, str]:
     """A question-context-response triple where the response is fabricated."""
     return {
         "question": "What is the capital of France?",
         "context": (
-            "France is a country in Western Europe. "
-            "Its capital and largest city is Paris."
+            "France is a country in Western Europe. Its capital and largest city is Paris."
         ),
         "response": (
             "The capital of France is Berlin, which is known for its "
@@ -120,7 +122,7 @@ def hallucinated_triple() -> dict[str, str]:
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def factual_pair() -> dict[str, str]:
     """A question-response pair where the answer is factually correct."""
     return {
@@ -132,7 +134,7 @@ def factual_pair() -> dict[str, str]:
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def fabricated_pair() -> dict[str, str]:
     """A question-response pair where the answer is fabricated."""
     return {
@@ -147,6 +149,7 @@ def fabricated_pair() -> dict[str, str]:
 # ---------------------------------------------------------------------------
 # pytest markers
 # ---------------------------------------------------------------------------
+
 
 def pytest_configure(config: Any) -> None:
     """Register custom markers."""

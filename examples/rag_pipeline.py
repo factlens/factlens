@@ -47,6 +47,7 @@ def generate(query: str, context: str) -> str:
 
 # --- RAG pipeline with verification ----------------------------------------
 
+
 def rag_with_verification(question: str) -> None:
     """Run a RAG query with factlens hallucination verification."""
     context = retrieve(question)

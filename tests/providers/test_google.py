@@ -34,7 +34,10 @@ class TestFactlensGeminiInit:
                 from factlens.providers.google import FactlensGemini
 
                 llm = FactlensGemini(api_key="test-key")
-                assert hasattr(llm, "_model_name") or hasattr(llm, "_model") or hasattr(llm, "model")
+                has_model_attr = (
+                    hasattr(llm, "_model_name") or hasattr(llm, "_model") or hasattr(llm, "model")
+                )
+                assert has_model_attr
             except ImportError:
                 pytest.skip("google provider not implemented yet")
 
@@ -55,9 +58,11 @@ class TestFactlensGeminiChat:
                     patch.object(
                         FactlensGemini,
                         "__init__",
-                        lambda self, **kw: setattr(self, "_client", mock_google_client)
-                        or setattr(self, "_model", "gemini-pro")
-                        or setattr(self, "_factlens_model", "all-MiniLM-L6-v2"),
+                        lambda self, **kw: (
+                            setattr(self, "_client", mock_google_client)
+                            or setattr(self, "_model", "gemini-pro")
+                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                        ),
                     ),
                     patch("factlens.providers.google.evaluate") as mock_eval,
                 ):
@@ -81,9 +86,11 @@ class TestFactlensGeminiChat:
                     patch.object(
                         FactlensGemini,
                         "__init__",
-                        lambda self, **kw: setattr(self, "_client", mock_google_client)
-                        or setattr(self, "_model", "gemini-pro")
-                        or setattr(self, "_factlens_model", "all-MiniLM-L6-v2"),
+                        lambda self, **kw: (
+                            setattr(self, "_client", mock_google_client)
+                            or setattr(self, "_model", "gemini-pro")
+                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                        ),
                     ),
                     patch("factlens.providers.google.evaluate") as mock_eval,
                 ):

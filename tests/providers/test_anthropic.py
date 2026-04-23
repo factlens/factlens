@@ -44,9 +44,11 @@ class TestFactlensAnthropicChat:
                     patch.object(
                         FactlensAnthropic,
                         "__init__",
-                        lambda self, **kw: setattr(self, "_client", mock_anthropic_client)
-                        or setattr(self, "_model", "claude-sonnet-4-20250514")
-                        or setattr(self, "_factlens_model", "all-MiniLM-L6-v2"),
+                        lambda self, **kw: (
+                            setattr(self, "_client", mock_anthropic_client)
+                            or setattr(self, "_model", "claude-sonnet-4-20250514")
+                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                        ),
                     ),
                     patch("factlens.providers.anthropic.evaluate") as mock_eval,
                 ):
@@ -67,9 +69,11 @@ class TestFactlensAnthropicChat:
                     patch.object(
                         FactlensAnthropic,
                         "__init__",
-                        lambda self, **kw: setattr(self, "_client", mock_anthropic_client)
-                        or setattr(self, "_model", "claude-sonnet-4-20250514")
-                        or setattr(self, "_factlens_model", "all-MiniLM-L6-v2"),
+                        lambda self, **kw: (
+                            setattr(self, "_client", mock_anthropic_client)
+                            or setattr(self, "_model", "claude-sonnet-4-20250514")
+                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                        ),
                     ),
                     patch("factlens.providers.anthropic.evaluate") as mock_eval,
                 ):
