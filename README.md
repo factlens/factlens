@@ -6,12 +6,10 @@
 
 
 
-[![PyPI version](https://img.shields.io/pypi/v/factlens?color=blue)](https://pypi.org/project/factlens/)
-[![Python versions](https://img.shields.io/pypi/pyversions/factlens)](https://pypi.org/project/factlens/)
+[![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12%20|%203.13-blue)](https://github.com/factlens/factlens)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/ci.yml?branch=main&label=CI)](https://github.com/factlens/factlens/actions)
 [![Docs](https://img.shields.io/badge/docs-docs.factlens.dev-blue)](https://docs.factlens.dev)
-[![Downloads](https://img.shields.io/pypi/dm/factlens)](https://pypi.org/project/factlens/)
 
 [Documentation](https://docs.factlens.dev) | [Research Papers](#research) | [Examples](examples/) | [Contributing](CONTRIBUTING.md)
 
