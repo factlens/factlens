@@ -4,6 +4,11 @@ This page provides the complete mathematical derivation of the Semantic Groundin
 
 ## Formal Definition
 
+<figure markdown="span">
+  ![SGI geometry on the unit hypersphere](../assets/sgi_geometry.png){ width="700" }
+  <figcaption>Angular geometry of SGI on the unit hypersphere S<sup>d−1</sup>. Question <b>q</b> and context <b>c</b> define anchor points. A valid response (blue) departs from q toward c, yielding SGI > 1. A hallucination (red) remains angularly proximate to the question, yielding SGI < 1.</figcaption>
+</figure>
+
 Let $\phi: \mathcal{T} \to \mathbb{R}^n$ be a sentence embedding function. Given a question $q$, context $\text{ctx}$, and response $r$, the Semantic Grounding Index is defined as:
 
 $$
