@@ -1,12 +1,14 @@
 /* mkdocstrings: fix oversized function signatures in API reference.
  * Signatures live inside <hN class="doc doc-heading"> elements,
- * so <code> inherits the heading font-size. Override to a fixed size. */
+ * so <code> inherits the heading font-size.
+ * Material root font-size is 25px, so we use 0.55rem ~ 13.75px
+ * to match body inline-code size. */
 
 .doc-heading code {
-  font-size: 0.85rem !important;
+  font-size: 0.55rem !important;
 }
 
-/* Keep inline parameter references at normal body-code size */
-.doc-contents code {
-  font-size: 0.85em;
+/* Module-level headings (h2) can be slightly larger */
+h2.doc-heading code {
+  font-size: 0.64rem !important;
 }
