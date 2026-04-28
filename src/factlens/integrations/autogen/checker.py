@@ -60,7 +60,7 @@ class FactlensChecker:
         context_key: Key to look for context in message metadata.
             Defaults to ``"context"``.
 
-    Example:
+    Examples:
         >>> checker = FactlensChecker()
         >>> messages = [
         ...     {"role": "user", "content": "Summarize this document."},
@@ -110,7 +110,7 @@ class FactlensChecker:
                 - ``"method"``: Scoring method used (``"sgi"`` or ``"dgi"``).
                 - ``"explanation"``: Human-readable interpretation.
 
-        Example:
+        Examples:
             >>> checker = FactlensChecker()
             >>> result = checker.check(
             ...     messages=[
