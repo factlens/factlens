@@ -123,7 +123,7 @@ def calibrate(
         ValueError: If neither ``pairs`` nor ``csv_path`` is provided,
             or if the data contains fewer than 5 pairs.
 
-    Example:
+    Examples:
         >>> result = calibrate(pairs=[("Q?", "A.") for _ in range(20)])
         >>> result.n_pairs
         20
