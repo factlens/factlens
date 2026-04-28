@@ -1,14 +1,17 @@
 /* mkdocstrings: fix oversized function signatures in API reference.
- * Signatures live inside <hN class="doc doc-heading"> elements,
- * so <code> inherits the heading font-size.
- * Material root font-size is 25px, so we use 0.55rem ~ 13.75px
- * to match body inline-code size. */
+ *
+ * Signatures sit inside <hN class="doc doc-heading"> elements, so <code>
+ * inherits the heading font-size. Material's ".md-typeset code" sets 0.85em
+ * (relative to the heading), making signatures far too large.
+ *
+ * We use ".md-typeset .doc-heading code" for higher specificity than
+ * Material's rule, and set an absolute pixel size. */
 
-.doc-heading code {
-  font-size: 0.55rem !important;
+.md-typeset .doc-heading code {
+  font-size: 13.6px !important;
 }
 
-/* Module-level headings (h2) can be slightly larger */
-h2.doc-heading code {
-  font-size: 0.64rem !important;
+/* Module-level headings can be slightly larger */
+.md-typeset h2.doc-heading code {
+  font-size: 16px !important;
 }
