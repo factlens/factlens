@@ -4,6 +4,11 @@ This page presents the complete mathematical framework for the Directional Groun
 
 ## Displacement Vectors
 
+<figure markdown="span">
+  ![Geometric taxonomy of hallucination types](../assets/hallucination_taxonomy.png){ width="700" }
+  <figcaption>Geometric taxonomy of hallucination types on the embedding hypersphere S<sup>d−1</sup>. Type I (purple): response stays near the question. Type II (red): departs to an unrelated region. Type III (pink): lands inside the grounded region P<sub>q</sub> but is factually incorrect — the confabulation boundary that DGI cannot cross.</figcaption>
+</figure>
+
 Given a question $q$ and response $r$, the **displacement vector** is:
 
 $$
