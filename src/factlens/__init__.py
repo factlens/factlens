@@ -29,12 +29,22 @@ Quick start::
     >>> score.method
     'sgi'
 
+Embedding models:
+
+    factlens defaults to ``all-mpnet-base-v2`` (768 dims), which was used
+    for DGI calibration and the confabulation benchmark. For faster scoring,
+    pass ``model="all-MiniLM-L6-v2"`` (384 dims, ~5x faster).
+
+    Any sentence-transformers model works. See ``factlens.VALIDATED_MODELS``
+    for models with published AUROC numbers.
+
 References:
     Marin (2025). Semantic Grounding Index. arXiv:2512.13771.
     Marin (2026). A Geometric Taxonomy of Hallucinations. arXiv:2602.13224.
     Marin (2026). Rotational Dynamics of Factual Constraint Processing. arXiv:2603.13259.
 """
 
+from factlens._internal.embeddings import DEFAULT_MODEL, VALIDATED_MODELS, ModelInfo
 from factlens._version import __version__
 from factlens.calibrate import CalibrationResult, calibrate
 from factlens.dgi import DGI, compute_dgi
@@ -43,18 +53,21 @@ from factlens.score import DGIResult, FactlensScore, SGIResult
 from factlens.sgi import SGI, compute_sgi
 
 __all__ = [
-    "DGI",
     # Classes
+    "DGI",
     "SGI",
     "CalibrationResult",
     "DGIResult",
     "FactlensScore",
+    "ModelInfo",
     "SGIResult",
-    # Meta
+    # Constants
+    "DEFAULT_MODEL",
+    "VALIDATED_MODELS",
+    # Functions
     "__version__",
     "calibrate",
     "compute_dgi",
-    # Functions
     "compute_sgi",
     "evaluate",
     "evaluate_batch",

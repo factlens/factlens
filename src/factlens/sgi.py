@@ -53,7 +53,7 @@ def compute_sgi(
         question: The input query.
         context: Source document, retrieved chunks, or reference text.
         response: The LLM output to evaluate.
-        model: Sentence transformer model name. Default ``all-MiniLM-L6-v2``.
+        model: Sentence transformer model name. Default ``all-mpnet-base-v2``.
 
     Returns:
         SGIResult with raw score, normalized score, and flag status.
@@ -126,7 +126,7 @@ class SGI:
     to avoid repeating the ``model`` parameter.
 
     Example:
-        >>> sgi = SGI(model="all-MiniLM-L6-v2")
+        >>> sgi = SGI(model="all-mpnet-base-v2")
         >>> result = sgi.score(
         ...     question="What is X?",
         ...     context="X is Y.",
