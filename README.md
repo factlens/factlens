@@ -314,4 +314,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, code standards, an
 
 ## License
 
-[MIT](LICENSE) -- Javier Marin (javier@jmarin.info)
+[MIT](LICENSE) -- Javier Marin (javier@factlens.dev)
