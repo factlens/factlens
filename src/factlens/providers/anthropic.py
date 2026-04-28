@@ -62,7 +62,7 @@ class FactlensAnthropic:
         factlens_model: Sentence-transformer model for factlens scoring.
             Defaults to ``DEFAULT_MODEL``.
 
-    Example:
+    Examples:
         >>> llm = FactlensAnthropic(api_key="sk-ant-...")
         >>> resp = llm.chat("Summarize this.", context="Source text here.")
         >>> print(resp.factlens_score.explanation)
@@ -100,7 +100,7 @@ class FactlensAnthropic:
         Raises:
             anthropic.APIError: If the API call fails.
 
-        Example:
+        Examples:
             >>> llm = FactlensAnthropic(api_key="sk-ant-...")
             >>> resp = llm.chat("Explain photosynthesis.")
             >>> resp.text
