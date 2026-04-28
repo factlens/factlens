@@ -110,7 +110,7 @@ For auto-generated documentation from source docstrings, ensure `mkdocstrings` i
 | `SGI_STRONG_PASS` | 1.20 | `factlens._internal.thresholds` | SGI strong pass threshold |
 | `SGI_REVIEW` | 0.95 | `factlens._internal.thresholds` | SGI review/flag threshold |
 | `DGI_PASS` | 0.30 | `factlens._internal.thresholds` | DGI pass threshold |
-| `DEFAULT_MODEL` | `"all-MiniLM-L6-v2"` | `factlens._internal.embeddings` | Default sentence-transformer model |
+| `DEFAULT_MODEL` | `"all-mpnet-base-v2"` | `factlens._internal.embeddings` | Default sentence-transformer model |
 
 ## Type Summary
 

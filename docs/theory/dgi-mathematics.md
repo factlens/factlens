@@ -92,7 +92,7 @@ In low dimensions, the vMF distribution is well-known:
 - On $S^1$ (the circle): vMF reduces to the **von Mises distribution**, the circular analog of the Gaussian.
 - On $S^2$ (the 2-sphere): vMF is the **Fisher distribution**, used extensively in paleomagnetic studies and geological directional data.
 
-In high dimensions ($n = 384$), the vMF distribution concentrates rapidly for even moderate $\kappa$ values, due to the vast surface area of $S^{n-1}$.
+In high dimensions ($n = 768$), the vMF distribution concentrates rapidly for even moderate $\kappa$ values, due to the vast surface area of $S^{n-1}$.
 
 ## Mean Direction Estimation (MLE)
 
@@ -137,7 +137,7 @@ $$
 
 [^1]: Sra, S. (2012). A short note on parameter approximation for von Mises-Fisher distributions: and a fast implementation of $I_s(x)$. *Computational Statistics*, 27(1), 177--190.
 
-This approximation is accurate for moderate to large $n$ and avoids the computational cost of evaluating Bessel functions. For $n = 384$ (our default embedding dimension), the approximation error is negligible.
+This approximation is accurate for moderate to large $n$ and avoids the computational cost of evaluating Bessel functions. For $n = 768$ (our default embedding dimension), the approximation error is negligible.
 
 ### Interpretation of $\hat{\kappa}$
 
@@ -169,7 +169,7 @@ $$
 \mathbb{E}_{\text{uniform}}[\text{DGI}] = \mathbb{E}[\hat{\boldsymbol{\delta}}^\top \hat{\boldsymbol{\mu}}] = 0
 $$
 
-with variance $\approx 1/n$. For $n = 384$, the standard deviation is $\approx 0.051$.
+with variance $\approx 1/n$. For $n = 768$, the standard deviation is $\approx 0.036$.
 
 Under the alternative hypothesis that the displacement is drawn from $\text{vMF}(\hat{\boldsymbol{\mu}}, \kappa)$:
 
@@ -177,7 +177,7 @@ $$
 \mathbb{E}_{\text{grounded}}[\text{DGI}] = A_n(\kappa) = \frac{I_{n/2}(\kappa)}{I_{n/2-1}(\kappa)}
 $$
 
-For well-calibrated domains ($\kappa \geq 10$, $n = 384$), $A_n(\kappa) \approx 1 - (n-1)/(2\kappa)$, which is close to 1.
+For well-calibrated domains ($\kappa \geq 10$, $n = 768$), $A_n(\kappa) \approx 1 - (n-1)/(2\kappa)$, which is close to 1.
 
 The DGI threshold of 0.30 is approximately $6\sigma$ above the null hypothesis mean, providing strong statistical confidence.
 

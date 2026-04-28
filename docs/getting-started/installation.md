@@ -11,7 +11,7 @@
 pip install factlens
 ```
 
-This installs the core library with SGI, DGI, calibration, and CLI support. The default embedding model (`all-MiniLM-L6-v2`) is downloaded automatically on first use via the `sentence-transformers` package.
+This installs the core library with SGI, DGI, calibration, and CLI support. The default embedding model (`all-mpnet-base-v2`) is downloaded automatically on first use via the `sentence-transformers` package.
 
 ## Optional Extras
 
@@ -73,11 +73,11 @@ print(result.explanation)  # Human-readable interpretation
 ```
 
 !!! note "First-run model download"
-    The first call to any scoring function triggers a one-time download of the `all-MiniLM-L6-v2` sentence-transformer model (~80 MB). Subsequent calls use the cached model.
+    The first call to any scoring function triggers a one-time download of the `all-mpnet-base-v2` sentence-transformer model (~420 MB). Subsequent calls use the cached model.
 
 ## Embedding Model Selection
 
-factlens defaults to `all-MiniLM-L6-v2` (384 dimensions, ~80 MB). You can use any sentence-transformer model by passing the `model` parameter:
+factlens defaults to `all-mpnet-base-v2` (768 dimensions, ~420 MB). You can use any sentence-transformer model by passing the `model` parameter:
 
 ```python
 from factlens import compute_sgi

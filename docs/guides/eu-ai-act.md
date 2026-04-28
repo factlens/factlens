@@ -141,7 +141,7 @@ def auditable_evaluate(question, response, context=None, **kwargs):
             "explanation": score.explanation,
         },
         "config": {
-            "model": kwargs.get("model", "all-MiniLM-L6-v2"),
+            "model": kwargs.get("model", "all-mpnet-base-v2"),
             "reference_csv": kwargs.get("reference_csv"),
         },
     }

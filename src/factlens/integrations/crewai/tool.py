@@ -19,6 +19,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from factlens._internal.embeddings import DEFAULT_MODEL
 from factlens.evaluate import evaluate
 
 if TYPE_CHECKING:
@@ -55,7 +56,7 @@ class FactlensTool:
             ``"factlens_verify"``.
         description: Tool description for agent tool selection.
         factlens_model: Sentence-transformer model for factlens scoring.
-            Defaults to ``"all-MiniLM-L6-v2"``.
+            Defaults to ``DEFAULT_MODEL``.
 
     Example:
         >>> from factlens.integrations.crewai import FactlensTool
@@ -81,7 +82,7 @@ class FactlensTool:
         self,
         name: str = "factlens_verify",
         description: str | None = None,
-        factlens_model: str = "all-MiniLM-L6-v2",
+        factlens_model: str = DEFAULT_MODEL,
     ) -> None:
         self.name = name
         if description is not None:

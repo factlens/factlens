@@ -1,6 +1,6 @@
 # Benchmark Results
 
-All results use the default embedding model (`all-MiniLM-L6-v2`, 384 dimensions) unless otherwise noted. AUROC is the primary metric.
+All results use the default embedding model (`all-mpnet-base-v2`, 768 dimensions) unless otherwise noted. AUROC is the primary metric.
 
 ## Headline Results
 
@@ -64,7 +64,7 @@ Different embedding models produce different AUROC values:
 | e5-small-v2 | 384 | 0.75 | 0.953 | ~5 ms |
 
 !!! tip "Model recommendation"
-    `all-MiniLM-L6-v2` provides the best tradeoff between accuracy and speed. The larger `all-mpnet-base-v2` offers marginal improvement (+0.006 AUROC) at 2.4x the inference cost.
+    `all-mpnet-base-v2` (the default) provides the best tradeoff between accuracy and discrimination. For latency-sensitive deployments where ~5 ms matters, the smaller `all-MiniLM-L6-v2` trades 0.006 AUROC for 2.4x faster inference.
 
 ## Calibration Size Sensitivity
 

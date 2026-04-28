@@ -4,7 +4,7 @@ This file helps AI coding agents (Claude Code, Codex, Copilot Workspace, etc.) n
 
 ## What factlens does
 
-factlens detects LLM hallucinations using embedding geometry. It computes deterministic scores from spatial relationships in an embedding space (default: `all-MiniLM-L6-v2`). No second LLM is needed.
+factlens detects LLM hallucinations using embedding geometry. It computes deterministic scores from spatial relationships in an embedding space (default: `all-mpnet-base-v2`). No second LLM is needed.
 
 Two scoring methods:
 - **SGI (Semantic Grounding Index):** ratio-based, requires context. `SGI = dist(response, question) / dist(response, context)`.

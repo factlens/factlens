@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from factlens._internal.embeddings import DEFAULT_MODEL
 from factlens.evaluate import evaluate
 
 if TYPE_CHECKING:
@@ -55,7 +56,7 @@ class FactlensEvaluator:
 
     Args:
         factlens_model: Sentence-transformer model for factlens scoring.
-            Defaults to ``"all-MiniLM-L6-v2"``.
+            Defaults to ``DEFAULT_MODEL``.
         input_key: Key to extract the question from run inputs.
             Defaults to ``"question"``.
         output_key: Key to extract the response from run outputs.
@@ -72,7 +73,7 @@ class FactlensEvaluator:
 
     def __init__(
         self,
-        factlens_model: str = "all-MiniLM-L6-v2",
+        factlens_model: str = DEFAULT_MODEL,
         input_key: str = "question",
         output_key: str = "output",
         context_key: str = "context",

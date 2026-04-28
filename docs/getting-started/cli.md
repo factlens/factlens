@@ -41,7 +41,7 @@ Explanation: SGI=1.234 -- strong context engagement (pass)
 | `--question` | Yes | --- | The input question |
 | `--response` | Yes | --- | The LLM response to evaluate |
 | `--context` | No | None | Source context (enables SGI when provided) |
-| `--model` | No | `all-MiniLM-L6-v2` | Sentence-transformer model |
+| `--model` | No | `all-mpnet-base-v2` | Sentence-transformer model |
 
 ## `factlens evaluate`
 
@@ -77,7 +77,7 @@ The `context` column is optional. When present, SGI is used; when absent or empt
 |---|---|---|---|
 | `input_csv` | Yes (positional) | --- | Input CSV file path |
 | `--output` | Yes | --- | Output CSV file path |
-| `--model` | No | `all-MiniLM-L6-v2` | Sentence-transformer model |
+| `--model` | No | `all-mpnet-base-v2` | Sentence-transformer model |
 | `--reference-csv` | No | None | DGI calibration CSV path |
 
 !!! tip "CI/CD integration"
@@ -108,7 +108,7 @@ The CSV must contain verified grounded (question, response) pairs from your targ
 ```text
 Calibration complete.
   Pairs:         47
-  Embedding dim: 384
+  Embedding dim: 768
   Concentration: 12.34
   Saved to:      calibration.json
 ```
@@ -125,7 +125,7 @@ factlens evaluate input.csv --output results.csv --reference-csv domain_pairs.cs
 |---|---|---|---|
 | `--pairs` | Yes | --- | CSV with question,response columns |
 | `--output` | Yes | --- | Output JSON file path |
-| `--model` | No | `all-MiniLM-L6-v2` | Sentence-transformer model |
+| `--model` | No | `all-mpnet-base-v2` | Sentence-transformer model |
 
 ## `factlens benchmark`
 
@@ -159,4 +159,4 @@ DGI AUROC: 0.9580 (n=200)
 | Flag | Required | Default | Description |
 |---|---|---|---|
 | `--dataset` | No | `cert-framework/human-confabulation-benchmark` | HuggingFace dataset name |
-| `--model` | No | `all-MiniLM-L6-v2` | Sentence-transformer model |
+| `--model` | No | `all-mpnet-base-v2` | Sentence-transformer model |

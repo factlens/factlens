@@ -32,7 +32,6 @@ from typing import TYPE_CHECKING
 import numpy as np
 
 from factlens._internal.embeddings import DEFAULT_MODEL
-from factlens.dgi import _compute_reference_direction
 
 if TYPE_CHECKING:
     from numpy.typing import NDArray
@@ -146,12 +145,7 @@ def calibrate(
 
     logger.info("Calibrating DGI with %d pairs using model %s.", len(pairs), model)
 
-    mu_hat = _compute_reference_direction(pairs, model)
-
-    # Estimate concentration parameter (kappa) from resultant length.
-    # This is a rough estimate — the true MLE for von Mises-Fisher is
-    # more complex, but the resultant length R-bar is a sufficient
-    # indicator of calibration quality.
+    # Embed all pairs once and reuse for both mu_hat and kappa.
     from factlens._internal.embeddings import encode_texts
     from factlens._internal.geometry import displacement_vector, unit_normalize
 
@@ -160,17 +154,25 @@ def calibrate(
         texts.extend([q, r])
     embeddings = encode_texts(texts, model_name=model)
 
-    unit_displacements = []
+    # Compute unit displacement vectors.
+    unit_displacements: list[NDArray[np.float32]] = []
     for i in range(len(pairs)):
         delta = displacement_vector(embeddings[i * 2], embeddings[i * 2 + 1])
         norm = float(np.linalg.norm(delta))
         if norm > 1e-8:
             unit_displacements.append(unit_normalize(delta))
 
-    if unit_displacements:
-        r_bar = float(np.linalg.norm(np.mean(np.stack(unit_displacements), axis=0)))
-    else:
-        r_bar = 0.0
+    if not unit_displacements:
+        msg = "No valid displacement vectors computed from calibration pairs."
+        raise ValueError(msg)
+
+    # Mean direction (mu_hat) — same computation as _compute_reference_direction.
+    mu: NDArray[np.float32] = np.mean(np.stack(unit_displacements), axis=0)
+    mu_hat = unit_normalize(mu)
+
+    # Estimate concentration parameter (kappa) from resultant length.
+    # R-bar is the length of the mean vector before normalization.
+    r_bar = float(np.linalg.norm(np.mean(np.stack(unit_displacements), axis=0)))
 
     # Approximate kappa from R-bar (Sra, 2012).
     d = mu_hat.shape[0]

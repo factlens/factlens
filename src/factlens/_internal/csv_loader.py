@@ -3,8 +3,9 @@
 Two sources of reference pairs:
 
 1. **Bundled dataset**: Ships with factlens in ``factlens/data/reference_pairs.csv``.
-   Contains verified grounded (question, response) pairs across finance,
-   medical, science, and history domains. Used when no user CSV is provided.
+   Contains 212 verified grounded (question, response) pairs across 9 domains:
+   finance, medical, python_coding, science, typescript_coding, history, law,
+   general, and geography. Used when no user CSV is provided.
 
 2. **User-provided CSV**: Domain-specific pairs that improve DGI accuracy.
    Generic calibration (bundled) achieves AUROC ~0.76.

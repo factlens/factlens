@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from factlens._internal.embeddings import DEFAULT_MODEL
 from factlens.evaluate import evaluate
 from factlens.providers._base import LLMResponse
 
@@ -58,9 +59,7 @@ class FactlensOpenAI:
         api_key: OpenAI API key.
         model: Chat model to use for generation. Defaults to ``"gpt-4o"``.
         factlens_model: Sentence-transformer model for factlens scoring.
-            Defaults to ``"all-MiniLM-L6-v2"``.
-        factlens_threshold: Score threshold override (reserved for future use).
-            Defaults to ``0.45``.
+            Defaults to ``DEFAULT_MODEL``.
 
     Example:
         >>> llm = FactlensOpenAI(api_key="sk-...")
@@ -72,13 +71,11 @@ class FactlensOpenAI:
         self,
         api_key: str,
         model: str = "gpt-4o",
-        factlens_model: str = "all-MiniLM-L6-v2",
-        factlens_threshold: float = 0.45,
+        factlens_model: str = DEFAULT_MODEL,
     ) -> None:
         self._client = _get_openai_client(api_key)
         self._model = model
         self._factlens_model = factlens_model
-        self._factlens_threshold = factlens_threshold
 
     def chat(
         self,

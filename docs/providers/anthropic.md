@@ -35,7 +35,7 @@ print(resp.factlens_score.method)         # 'dgi'
 llm = FactlensAnthropic(
     api_key="sk-ant-...",
     model="claude-sonnet-4-20250514",      # Claude model for generation
-    factlens_model="all-MiniLM-L6-v2",    # Sentence-transformer for scoring
+    factlens_model="all-mpnet-base-v2",    # Sentence-transformer for scoring
     factlens_threshold=0.45,               # Reserved for future use
 )
 ```
@@ -44,7 +44,7 @@ llm = FactlensAnthropic(
 |---|---|---|
 | `api_key` | Required | Anthropic API key |
 | `model` | `"claude-sonnet-4-20250514"` | Claude model for generation |
-| `factlens_model` | `"all-MiniLM-L6-v2"` | Embedding model for scoring |
+| `factlens_model` | `"all-mpnet-base-v2"` | Embedding model for scoring |
 | `factlens_threshold` | `0.45` | Reserved for future threshold customization |
 
 ## Response Object

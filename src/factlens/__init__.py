@@ -44,10 +44,10 @@ References:
     Marin (2026). Rotational Dynamics of Factual Constraint Processing. arXiv:2603.13259.
 """
 
-from factlens._internal.embeddings import DEFAULT_MODEL, VALIDATED_MODELS, ModelInfo
+from factlens._internal.embeddings import DEFAULT_MODEL, VALIDATED_MODELS, ModelInfo, reset_cache
 from factlens._version import __version__
 from factlens.calibrate import CalibrationResult, calibrate
-from factlens.dgi import DGI, compute_dgi
+from factlens.dgi import DGI, compute_dgi, reset_calibration_cache
 from factlens.evaluate import evaluate, evaluate_batch
 from factlens.score import DGIResult, FactlensScore, SGIResult
 from factlens.sgi import SGI, compute_sgi
@@ -68,4 +68,6 @@ __all__ = [
     "compute_sgi",
     "evaluate",
     "evaluate_batch",
+    "reset_cache",
+    "reset_calibration_cache",
 ]

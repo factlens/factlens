@@ -19,6 +19,8 @@ import csv
 import sys
 from pathlib import Path
 
+from factlens._internal.embeddings import DEFAULT_MODEL
+
 
 def _cmd_check(args: argparse.Namespace) -> None:
     """Handle the ``check`` subcommand."""
@@ -242,7 +244,7 @@ def _build_parser() -> argparse.ArgumentParser:
     check_parser.add_argument("--response", required=True, help="The LLM response to evaluate.")
     check_parser.add_argument("--context", default=None, help="Source context (enables SGI).")
     check_parser.add_argument(
-        "--model", default="all-MiniLM-L6-v2", help="Sentence transformer model."
+        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
     )
 
     # ── evaluate ───────────────────────────────────────────────────────────
@@ -253,7 +255,7 @@ def _build_parser() -> argparse.ArgumentParser:
     eval_parser.add_argument("input_csv", help="Input CSV with question,response[,context].")
     eval_parser.add_argument("--output", required=True, help="Output CSV path.")
     eval_parser.add_argument(
-        "--model", default="all-MiniLM-L6-v2", help="Sentence transformer model."
+        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
     )
     eval_parser.add_argument("--reference-csv", default=None, help="DGI calibration CSV path.")
 
@@ -267,7 +269,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--output", required=True, help="Output JSON path for calibration data."
     )
     cal_parser.add_argument(
-        "--model", default="all-MiniLM-L6-v2", help="Sentence transformer model."
+        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
     )
 
     # ── benchmark ──────────────────────────────────────────────────────────
@@ -281,7 +283,7 @@ def _build_parser() -> argparse.ArgumentParser:
         help="HuggingFace dataset name.",
     )
     bench_parser.add_argument(
-        "--model", default="all-MiniLM-L6-v2", help="Sentence transformer model."
+        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
     )
 
     return parser

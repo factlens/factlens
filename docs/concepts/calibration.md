@@ -135,7 +135,7 @@ The saved JSON contains all fields needed to reconstruct the reference direction
     ```
 
 !!! warning "Model consistency"
-    The calibration must use the same embedding model as the scoring. If you calibrate with `all-MiniLM-L6-v2`, you must score with `all-MiniLM-L6-v2`. Mixing models produces undefined behavior because the embedding spaces are geometrically different.
+    The calibration must use the same embedding model as the scoring. If you calibrate with `all-mpnet-base-v2`, you must score with `all-mpnet-base-v2`. Mixing models produces undefined behavior because the embedding spaces are geometrically different.
 
 ## Next Steps
 

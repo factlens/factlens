@@ -4,7 +4,7 @@ This page provides the mathematical foundations underlying factlens. We cover th
 
 ## Embedding Spaces and $\mathbb{R}^n$
 
-A sentence-transformer model $\phi$ maps variable-length text strings to fixed-dimensional vectors in $\mathbb{R}^n$. For the default model `all-MiniLM-L6-v2`, $n = 384$. For `all-mpnet-base-v2`, $n = 768$.
+A sentence-transformer model $\phi$ maps variable-length text strings to fixed-dimensional vectors in $\mathbb{R}^n$. For the default model `all-mpnet-base-v2`, $n = 768$. For the smaller `all-MiniLM-L6-v2`, $n = 384$.
 
 $$
 \phi: \mathcal{T} \to \mathbb{R}^n
@@ -105,7 +105,7 @@ $$
 S^{n-1} = \{\mathbf{v} \in \mathbb{R}^n : \|\mathbf{v}\| = 1\}
 $$
 
-This is an $(n-1)$-dimensional manifold embedded in $\mathbb{R}^n$. For $n = 384$, the hypersphere $S^{383}$ is the space where DGI's directional statistics operate.
+This is an $(n-1)$-dimensional manifold embedded in $\mathbb{R}^n$. For the default $n = 768$, the hypersphere $S^{767}$ is the space where DGI's directional statistics operate.
 
 ### Properties of $S^{n-1}$
 
@@ -117,7 +117,7 @@ $$
 A_{n-1} = \frac{2\pi^{n/2}}{\Gamma(n/2)}
 $$
 
-For $n = 384$, this is an astronomically large number, reflecting the vast amount of "room" on a high-dimensional sphere.
+For $n = 768$, this is an astronomically large number, reflecting the vast amount of "room" on a high-dimensional sphere.
 
 **Geodesic distance.** The shortest path between two points on $S^{n-1}$ is the great-circle arc. The geodesic (angular) distance is:
 
@@ -125,7 +125,7 @@ $$
 d_{\text{geo}}(\mathbf{u}, \mathbf{v}) = \arccos(\langle \mathbf{u}, \mathbf{v} \rangle)
 $$
 
-**Uniform distribution.** A uniform distribution on $S^{n-1}$ places equal probability density at every point. Two random unit vectors drawn uniformly from $S^{383}$ will have expected cosine similarity close to 0, with variance $\approx 1/n$. This concentration phenomenon is key to understanding why DGI works.
+**Uniform distribution.** A uniform distribution on $S^{n-1}$ places equal probability density at every point. Two random unit vectors drawn uniformly from $S^{767}$ will have expected cosine similarity close to 0, with variance $\approx 1/n$. This concentration phenomenon is key to understanding why DGI works.
 
 ## Curse of Dimensionality
 
@@ -151,7 +151,7 @@ $$
 \mathbb{E}[\cos\theta] = 0, \quad \text{Var}[\cos\theta] \approx \frac{1}{n}
 $$
 
-For $n = 384$, this gives $\sigma \approx 0.051$. This means that cosine similarities of $\pm 0.1$ are already $\approx 2\sigma$ deviations from the mean --- statistically significant. DGI exploits this: a cosine similarity of 0.30 between the displacement direction and the reference direction is a $\approx 6\sigma$ event under the null hypothesis of random direction, giving high confidence in the grounding signal.
+For $n = 768$, this gives $\sigma \approx 0.036$. This means that cosine similarities of $\pm 0.1$ are already $\approx 2\sigma$ deviations from the mean --- statistically significant. DGI exploits this: a cosine similarity of 0.30 between the displacement direction and the reference direction is a $\approx 6\sigma$ event under the null hypothesis of random direction, giving high confidence in the grounding signal.
 
 ### The "Hub" Phenomenon
 

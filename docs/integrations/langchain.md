@@ -34,7 +34,7 @@ results = ls_evaluate(
 
 ```python
 evaluator = FactlensEvaluator(
-    factlens_model="all-MiniLM-L6-v2",  # Embedding model
+    factlens_model="all-mpnet-base-v2",  # Embedding model
     input_key="question",                 # Key for question in run inputs
     output_key="output",                  # Key for response in run outputs
     context_key="context",                # Key for context in example inputs
@@ -43,7 +43,7 @@ evaluator = FactlensEvaluator(
 
 | Parameter | Default | Description |
 |---|---|---|
-| `factlens_model` | `"all-MiniLM-L6-v2"` | Sentence-transformer for scoring |
+| `factlens_model` | `"all-mpnet-base-v2"` | Sentence-transformer for scoring |
 | `input_key` | `"question"` | Key to extract question from run inputs |
 | `output_key` | `"output"` | Key to extract response from run outputs |
 | `context_key` | `"context"` | Key to extract context from example inputs |
@@ -87,7 +87,7 @@ for run_id, score in cb.scores.items():
 
 ```python
 cb = FactlensCallback(
-    factlens_model="all-MiniLM-L6-v2",  # Embedding model
+    factlens_model="all-mpnet-base-v2",  # Embedding model
     context_key="context",                # Metadata key for context
 )
 ```

@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
+from factlens._internal.embeddings import DEFAULT_MODEL
 from factlens.evaluate import evaluate
 from factlens.providers._base import LLMResponse
 
@@ -57,9 +58,7 @@ class FactlensGemini:
         model: Gemini model to use for generation. Defaults to
             ``"gemini-2.0-flash"``.
         factlens_model: Sentence-transformer model for factlens scoring.
-            Defaults to ``"all-MiniLM-L6-v2"``.
-        factlens_threshold: Score threshold override (reserved for future use).
-            Defaults to ``0.45``.
+            Defaults to ``DEFAULT_MODEL``.
 
     Example:
         >>> llm = FactlensGemini(api_key="AI...")
@@ -71,14 +70,12 @@ class FactlensGemini:
         self,
         api_key: str,
         model: str = "gemini-2.0-flash",
-        factlens_model: str = "all-MiniLM-L6-v2",
-        factlens_threshold: float = 0.45,
+        factlens_model: str = DEFAULT_MODEL,
     ) -> None:
         self._genai = _configure_genai(api_key)
         self._model_name = model
         self._generative_model = self._genai.GenerativeModel(model)
         self._factlens_model = factlens_model
-        self._factlens_threshold = factlens_threshold
 
     def chat(
         self,

@@ -20,9 +20,9 @@ graph LR
 
 ## The Embedding Space
 
-factlens uses sentence transformers (default: `all-MiniLM-L6-v2`) to map text into $\mathbb{R}^{384}$. In this space:
+factlens uses sentence transformers (default: `all-mpnet-base-v2`) to map text into $\mathbb{R}^{768}$. In this space:
 
-- Each text becomes a 384-dimensional vector
+- Each text becomes a 768-dimensional vector
 - Semantic similarity correlates with geometric proximity
 - The space has rich structure: clusters for topics, gradients for specificity, and characteristic directions for question-answer relationships
 

@@ -106,7 +106,7 @@ from factlens import compute_dgi, DGI
 result = compute_dgi(
     question="What causes seasons on Earth?",
     response="Seasons are caused by Earth's 23.5-degree axial tilt.",
-    model="all-MiniLM-L6-v2",        # optional
+    model="all-mpnet-base-v2",        # optional
     reference_csv="domain_pairs.csv",  # optional
 )
 

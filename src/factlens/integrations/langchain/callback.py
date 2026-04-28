@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from factlens._internal.embeddings import DEFAULT_MODEL
 from factlens.evaluate import evaluate
 
 if TYPE_CHECKING:
@@ -37,7 +38,7 @@ class FactlensCallback:
 
     Args:
         factlens_model: Sentence-transformer model for factlens scoring.
-            Defaults to ``"all-MiniLM-L6-v2"``.
+            Defaults to ``DEFAULT_MODEL``.
         context_key: Metadata key to look for context in ``kwargs``.
             Defaults to ``"context"``.
 
@@ -54,7 +55,7 @@ class FactlensCallback:
 
     def __init__(
         self,
-        factlens_model: str = "all-MiniLM-L6-v2",
+        factlens_model: str = DEFAULT_MODEL,
         context_key: str = "context",
     ) -> None:
         self._factlens_model = factlens_model

@@ -37,7 +37,7 @@ print(resp.factlens_score.method)         # 'dgi'
 llm = FactlensOpenAI(
     api_key="sk-...",
     model="gpt-4o",                     # OpenAI model for generation
-    factlens_model="all-MiniLM-L6-v2",  # Sentence-transformer for scoring
+    factlens_model="all-mpnet-base-v2",  # Sentence-transformer for scoring
     factlens_threshold=0.45,             # Reserved for future use
 )
 ```
@@ -46,7 +46,7 @@ llm = FactlensOpenAI(
 |---|---|---|
 | `api_key` | Required | OpenAI API key |
 | `model` | `"gpt-4o"` | Chat model for generation |
-| `factlens_model` | `"all-MiniLM-L6-v2"` | Embedding model for scoring |
+| `factlens_model` | `"all-mpnet-base-v2"` | Embedding model for scoring |
 | `factlens_threshold` | `0.45` | Reserved for future threshold customization |
 
 ## Response Object

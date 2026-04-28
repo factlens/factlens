@@ -94,10 +94,9 @@ def _compute_reference_direction(
         q_emb = embeddings[i * 2]
         r_emb = embeddings[i * 2 + 1]
         delta = displacement_vector(q_emb, r_emb)
-        delta_hat = unit_normalize(delta)
         norm = float(np.linalg.norm(delta))
         if norm > 1e-8:
-            displacements.append(delta_hat)
+            displacements.append(unit_normalize(delta))
 
     if not displacements:
         msg = "No valid displacement vectors computed from reference pairs."
@@ -290,17 +289,63 @@ class DGI:
         Returns:
             DGIResult with score and flag status.
         """
-        ref = self.reference_csv if self.reference_csv != "__inline__" else None
         if self.reference_csv == "__inline__":
-            # Use the inline-calibrated mu_hat.
+            # Use the inline-calibrated mu_hat directly from cache.
             cache_key = (self.model, "__inline__")
             if cache_key not in _mu_hat_cache:
                 msg = "Call calibrate() before score() when using inline pairs."
                 raise RuntimeError(msg)
+            return self._score_with_mu_hat(question, response, _mu_hat_cache[cache_key])
 
         return compute_dgi(
             question=question,
             response=response,
             model=self.model,
-            reference_csv=ref,
+            reference_csv=self.reference_csv,
+        )
+
+    def _score_with_mu_hat(
+        self,
+        question: str,
+        response: str,
+        mu_hat: NDArray[np.float32],
+    ) -> DGIResult:
+        """Score using a pre-computed reference direction.
+
+        Args:
+            question: The input query.
+            response: The LLM output to evaluate.
+            mu_hat: Pre-computed reference direction vector.
+
+        Returns:
+            DGIResult with score and flag status.
+        """
+        if not question.strip():
+            msg = "question must be a non-empty string."
+            raise ValueError(msg)
+        if not response.strip():
+            msg = "response must be a non-empty string."
+            raise ValueError(msg)
+
+        embeddings = encode_texts([question, response], model_name=self.model)
+        q_emb, r_emb = embeddings[0], embeddings[1]
+
+        delta = displacement_vector(q_emb, r_emb)
+        magnitude = float(np.linalg.norm(delta))
+
+        if magnitude < 1e-8:
+            return DGIResult(value=0.0, normalized=0.0, flagged=True)
+
+        delta_hat = delta / magnitude
+        gamma = float(np.dot(delta_hat, mu_hat))
+
+        if math.isnan(gamma):
+            return DGIResult(value=0.0, normalized=0.0, flagged=True)
+
+        normalized = round(normalize_dgi(gamma), 4)
+
+        return DGIResult(
+            value=round(gamma, 4),
+            normalized=normalized,
+            flagged=gamma < DGI_PASS,
         )

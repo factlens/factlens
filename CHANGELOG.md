@@ -5,7 +5,7 @@ All notable changes to factlens are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 factlens uses [Calendar Versioning](https://calver.org/) with the format `YYYY.M.D`.
 
-## 2026.4.22 -- Initial release
+## 2026.4.28 -- Initial release
 
 ### Added
 
@@ -19,6 +19,6 @@ factlens uses [Calendar Versioning](https://calver.org/) with the format `YYYY.M
 - **Framework integrations:** LangChain evaluator and callback, CrewAI tool, Semantic Kernel filter, AutoGen checker.
 - **Geometry layer:** Euclidean distance, displacement vectors, unit normalization, cosine similarity, and mean direction computation.
 - **Threshold system:** Empirically derived decision boundaries with tanh (SGI) and linear (DGI) normalization to [0, 1].
-- **Default model:** `all-MiniLM-L6-v2` (sentence-transformers). No GPU required.
+- **Default model:** `all-mpnet-base-v2` (sentence-transformers). No GPU required. `all-MiniLM-L6-v2` also validated (faster, lower accuracy).
 - **Full type coverage:** mypy strict mode, all public APIs fully annotated.
 - **Test suite:** unit tests (no model loading), integration tests, provider tests, and integration framework tests.

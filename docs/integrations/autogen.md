@@ -42,14 +42,14 @@ print(result)
 
 ```python
 checker = FactlensChecker(
-    factlens_model="all-MiniLM-L6-v2",  # Embedding model
+    factlens_model="all-mpnet-base-v2",  # Embedding model
     context_key="context",                # Metadata key for context
 )
 ```
 
 | Parameter | Default | Description |
 |---|---|---|
-| `factlens_model` | `"all-MiniLM-L6-v2"` | Sentence-transformer for scoring |
+| `factlens_model` | `"all-mpnet-base-v2"` | Sentence-transformer for scoring |
 | `context_key` | `"context"` | Key to look for context in message metadata |
 
 ## How It Works

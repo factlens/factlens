@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
 [![CI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/factlens/factlens/actions)
 [![Docs](https://img.shields.io/badge/docs-docs.factlens.dev-blue?style=flat-square)](https://docs.factlens.dev)
-[![Version](https://img.shields.io/badge/version-2026.4.22-orange?style=flat-square)](https://github.com/factlens/factlens/releases)
+[![Version](https://img.shields.io/badge/version-2026.4.28-orange?style=flat-square)](https://github.com/factlens/factlens/releases)
 
 [Documentation](https://docs.factlens.dev) | [Research Papers](#research) | [Examples](examples/) | [Contributing](CONTRIBUTING.md)
 
@@ -24,7 +24,7 @@
 
 | Problem | How factlens solves it |
 |---|---|
-| Second-LLM judges are non-deterministic and expensive | Single embedding model (`all-MiniLM-L6-v2`), deterministic output, sub-second latency |
+| Second-LLM judges are non-deterministic and expensive | Single embedding model (`all-mpnet-base-v2`), deterministic output, sub-second latency |
 | Probabilistic scores cannot be audited | Geometric ratios and angular measurements with clear mathematical definitions |
 | Regulatory compliance requires explainability | Every score traces to Euclidean distances and cosine similarities in $R^n$ |
 | One method does not fit all use cases | SGI for RAG/context verification, DGI for context-free chat, `evaluate()` auto-selects |
@@ -196,7 +196,7 @@ factlens/
 ├── evaluate.py              # High-level evaluate() and evaluate_batch()
 ├── calibrate.py             # Domain-specific DGI calibration
 ├── score.py                 # Result types: SGIResult, DGIResult, FactlensScore
-├── _version.py              # CalVer version (2026.4.22)
+├── _version.py              # CalVer version (2026.4.28)
 ├── _internal/               # Private implementation
 │   ├── geometry.py          # Euclidean distance, displacement, unit normalize
 │   ├── embeddings.py        # Sentence transformer encoding
@@ -226,7 +226,7 @@ The architecture follows a layered design:
 ├──────────────────┴──────────────────────────┤
 │        _internal (geometry, embeddings)      │
 ├─────────────────────────────────────────────┤
-│  sentence-transformers (all-MiniLM-L6-v2)   │
+│  sentence-transformers (all-mpnet-base-v2)   │
 └─────────────────────────────────────────────┘
          ▲                          ▲
          │                          │

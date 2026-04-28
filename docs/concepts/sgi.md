@@ -12,7 +12,7 @@ $$
 
 where:
 
-- $\phi(\cdot)$ is the sentence embedding function (default: `all-MiniLM-L6-v2`)
+- $\phi(\cdot)$ is the sentence embedding function (default: `all-mpnet-base-v2`)
 - $d(\cdot, \cdot)$ is Euclidean distance in $\mathbb{R}^n$
 - $r$ is the LLM response
 - $q$ is the input question
@@ -89,11 +89,11 @@ result = compute_sgi(
     question="What is the capital of France?",
     context="France is in Western Europe. Its capital is Paris.",
     response="The capital of France is Paris.",
-    model="all-MiniLM-L6-v2",  # optional
+    model="all-mpnet-base-v2",  # optional
 )
 
 # Class API (reusable)
-sgi = SGI(model="all-MiniLM-L6-v2")
+sgi = SGI(model="all-mpnet-base-v2")
 result = sgi.score(
     question="What is X?",
     context="X is Y.",

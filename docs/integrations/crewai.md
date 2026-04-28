@@ -41,7 +41,7 @@ Explanation: SGI=1.234 -- strong context engagement (pass)
 tool = FactlensTool(
     name="factlens_verify",           # Tool name visible to the agent
     description="Verify a response...",  # Custom description
-    factlens_model="all-MiniLM-L6-v2",  # Embedding model
+    factlens_model="all-mpnet-base-v2",  # Embedding model
 )
 ```
 
@@ -49,7 +49,7 @@ tool = FactlensTool(
 |---|---|---|
 | `name` | `"factlens_verify"` | Tool name for agent tool selection |
 | `description` | (built-in) | Description shown to the agent |
-| `factlens_model` | `"all-MiniLM-L6-v2"` | Sentence-transformer for scoring |
+| `factlens_model` | `"all-mpnet-base-v2"` | Sentence-transformer for scoring |
 
 ## Using in a CrewAI Agent
 
