@@ -31,6 +31,11 @@ factlens uses sentence transformers (default: `all-mpnet-base-v2`) to map text i
 
 ## SGI: Distance Ratios
 
+<figure markdown="span">
+  ![SGI geometry on the unit hypersphere](../assets/sgi_geometry.png){ width="700" }
+  <figcaption>Angular geometry of SGI on the unit hypersphere. A valid response (blue) departs from q toward c, yielding SGI > 1. A hallucination (red) remains angularly proximate to the question, yielding SGI < 1.</figcaption>
+</figure>
+
 When context is available, SGI asks: **is the response closer to the context or to the question?**
 
 $$
@@ -43,6 +48,11 @@ $$
 This captures a fundamental intuition: a grounded response should semantically resemble the source material more than it resembles the question that prompted it.
 
 ## DGI: Displacement Directions
+
+<figure markdown="span">
+  ![Geometric taxonomy of hallucination types](../assets/hallucination_taxonomy.png){ width="700" }
+  <figcaption>Geometric taxonomy of hallucination types on the embedding hypersphere. Type I (purple) stays near the question. Type II (red) departs to an unrelated direction. Type III (pink) lands inside the grounded region but is factually incorrect — the confabulation boundary.</figcaption>
+</figure>
 
 When no context is available, DGI analyzes the **direction** of semantic movement from question to response:
 
