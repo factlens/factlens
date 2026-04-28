@@ -53,7 +53,7 @@ def evaluate(
     Returns:
         FactlensScore with method, value, flag, and explanation.
 
-    Example:
+    Examples:
         >>> from factlens import evaluate
         >>> # With context → SGI
         >>> score = evaluate("Q?", "A.", context="Source text.")
@@ -115,7 +115,7 @@ def evaluate_batch(
     Raises:
         KeyError: If any item is missing ``question`` or ``response``.
 
-    Example:
+    Examples:
         >>> from factlens import evaluate_batch
         >>> items = [
         ...     {"question": "Q1?", "response": "A1.", "context": "C1."},
