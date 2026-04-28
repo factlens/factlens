@@ -1,7 +1,7 @@
 site_name: factlens
 site_description: Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable.
 site_author: Javier Marin
-site_url: https://javihaus.github.io/factlens/
+site_url: https://docs.factlens.dev/
 repo_url: https://github.com/factlens/factlens
 repo_name: factlens/factlens
 
@@ -9,6 +9,8 @@ copyright: Copyright &copy; 2025-2026 Javier Marin
 
 theme:
   name: material
+  logo: assets/Icon_factlens-white.png
+  favicon: assets/Icon_factlens_black.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -142,6 +144,6 @@ extra:
 
 extra_javascript:
   - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css: []
