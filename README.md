@@ -11,6 +11,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/factlens/factlens/actions)
 [![Docs](https://img.shields.io/badge/docs-docs.factlens.dev-blue?style=flat-square)](https://docs.factlens.dev)
 [![Version](https://img.shields.io/badge/version-2026.4.28-orange?style=flat-square)](https://github.com/factlens/factlens/releases)
+[![Release to PyPI](https://img.shields.io/github/actions/workflow/status/factlens/factlens/release.yml?style=flat-square&label=Release%20to%20PyPI)](https://github.com/factlens/factlens/actions/workflows/release.yml)
 
 [Documentation](https://docs.factlens.dev) | [Research Papers](#research) | [Examples](examples/) | [Contributing](CONTRIBUTING.md)
 
