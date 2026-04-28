@@ -1,203 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://javihaus.github.io/factlens/</loc>
+         <loc>https://docs.factlens.dev/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/</loc>
+         <loc>https://docs.factlens.dev/api/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/SUMMARY/</loc>
+         <loc>https://docs.factlens.dev/api/SUMMARY/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/calibrate/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/calibrate/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/dgi/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/dgi/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/evaluate/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/evaluate/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/score/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/score/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/sgi/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/sgi/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/cli/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/cli/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/cli/main/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/cli/main/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/data/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/data/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/autogen/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/autogen/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/autogen/checker/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/autogen/checker/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/crewai/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/crewai/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/crewai/tool/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/crewai/tool/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/langchain/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/langchain/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/langchain/callback/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/langchain/callback/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/langchain/evaluator/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/langchain/evaluator/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/semantic_kernel/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/semantic_kernel/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/integrations/semantic_kernel/filter/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/integrations/semantic_kernel/filter/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/providers/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/providers/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/providers/anthropic/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/providers/anthropic/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/providers/google/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/providers/google/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/api/factlens/providers/openai/</loc>
+         <loc>https://docs.factlens.dev/api/factlens/providers/openai/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/benchmarks/overview/</loc>
+         <loc>https://docs.factlens.dev/benchmarks/overview/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/benchmarks/results/</loc>
+         <loc>https://docs.factlens.dev/benchmarks/results/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/concepts/calibration/</loc>
+         <loc>https://docs.factlens.dev/concepts/calibration/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/concepts/dgi/</loc>
+         <loc>https://docs.factlens.dev/concepts/dgi/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/concepts/how-it-works/</loc>
+         <loc>https://docs.factlens.dev/concepts/how-it-works/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/concepts/sgi/</loc>
+         <loc>https://docs.factlens.dev/concepts/sgi/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/getting-started/cli/</loc>
+         <loc>https://docs.factlens.dev/getting-started/cli/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/getting-started/installation/</loc>
+         <loc>https://docs.factlens.dev/getting-started/installation/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/getting-started/quickstart/</loc>
+         <loc>https://docs.factlens.dev/getting-started/quickstart/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/guides/batch-evaluation/</loc>
+         <loc>https://docs.factlens.dev/guides/batch-evaluation/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/guides/domain-calibration/</loc>
+         <loc>https://docs.factlens.dev/guides/domain-calibration/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/guides/eu-ai-act/</loc>
+         <loc>https://docs.factlens.dev/guides/eu-ai-act/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/guides/rag-verification/</loc>
+         <loc>https://docs.factlens.dev/guides/rag-verification/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/integrations/autogen/</loc>
+         <loc>https://docs.factlens.dev/integrations/autogen/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/integrations/crewai/</loc>
+         <loc>https://docs.factlens.dev/integrations/crewai/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/integrations/langchain/</loc>
+         <loc>https://docs.factlens.dev/integrations/langchain/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/integrations/semantic-kernel/</loc>
+         <loc>https://docs.factlens.dev/integrations/semantic-kernel/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/providers/anthropic/</loc>
+         <loc>https://docs.factlens.dev/providers/anthropic/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/providers/google/</loc>
+         <loc>https://docs.factlens.dev/providers/google/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/providers/openai/</loc>
+         <loc>https://docs.factlens.dev/providers/openai/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/theory/confabulation-boundary/</loc>
+         <loc>https://docs.factlens.dev/theory/confabulation-boundary/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/theory/dgi-mathematics/</loc>
+         <loc>https://docs.factlens.dev/theory/dgi-mathematics/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/theory/embedding-geometry/</loc>
+         <loc>https://docs.factlens.dev/theory/embedding-geometry/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
     <url>
-         <loc>https://javihaus.github.io/factlens/theory/sgi-mathematics/</loc>
+         <loc>https://docs.factlens.dev/theory/sgi-mathematics/</loc>
          <lastmod>2026-04-28</lastmod>
     </url>
 </urlset>
