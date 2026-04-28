@@ -42,7 +42,7 @@ class FactlensCallback:
         context_key: Metadata key to look for context in ``kwargs``.
             Defaults to ``"context"``.
 
-    Example:
+    Examples:
         >>> cb = FactlensCallback()
         >>> # Use as a LangChain callback
         >>> from langchain_openai import ChatOpenAI
