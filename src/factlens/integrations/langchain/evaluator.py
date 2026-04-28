@@ -64,7 +64,7 @@ class FactlensEvaluator:
         context_key: Key to extract context from example inputs.
             Defaults to ``"context"``.
 
-    Example:
+    Examples:
         >>> evaluator = FactlensEvaluator()
         >>> # Typically used with LangSmith evaluate():
         >>> # from langsmith import evaluate
@@ -104,7 +104,7 @@ class FactlensEvaluator:
             An ``EvaluationResult`` with key ``"factlens"``, the normalized
             score, and a comment containing the explanation.
 
-        Example:
+        Examples:
             >>> evaluator = FactlensEvaluator()
             >>> result = evaluator.evaluate_run(run, example)
             >>> result.key
