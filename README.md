@@ -221,21 +221,21 @@ The architecture follows a layered design:
 
 ```
 ┌─────────────────────────────────────────────┐
-│            Public API (evaluate)             │
+│            Public API (evaluate)            │
 ├──────────────────┬──────────────────────────┤
 │   SGI (sgi.py)   │      DGI (dgi.py)        │
 ├──────────────────┴──────────────────────────┤
-│        _internal (geometry, embeddings)      │
+│        _internal (geometry, embeddings)     │
 ├─────────────────────────────────────────────┤
-│  sentence-transformers (all-mpnet-base-v2)   │
+│  sentence-transformers (all-mpnet-base-v2)  │
 └─────────────────────────────────────────────┘
          ▲                          ▲
          │                          │
-   ┌─────┴─────┐            ┌──────┴──────┐
+   ┌─────┴──────┐            ┌──────┴──────┐
    │ Providers  │            │Integrations │
-   │ (OpenAI,   │            │ (LangChain, │
-   │  Anthropic,│            │  CrewAI,    │
-   │  Google)   │            │  SK, AutoGen│
+   │ (OpenAI,   │            │(LangChain,  │
+   │  Anthropic,│            │ CrewAI,     │
+   │  Google)   │            │ SK, AutoGen)│
    └────────────┘            └─────────────┘
 ```
 
