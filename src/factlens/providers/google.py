@@ -60,7 +60,7 @@ class FactlensGemini:
         factlens_model: Sentence-transformer model for factlens scoring.
             Defaults to ``DEFAULT_MODEL``.
 
-    Example:
+    Examples:
         >>> llm = FactlensGemini(api_key="AI...")
         >>> resp = llm.chat("Summarize this.", context="Source text here.")
         >>> print(resp.factlens_score.explanation)
@@ -99,7 +99,7 @@ class FactlensGemini:
         Raises:
             google.api_core.exceptions.GoogleAPIError: If the API call fails.
 
-        Example:
+        Examples:
             >>> llm = FactlensGemini(api_key="AI...")
             >>> resp = llm.chat("Explain gravity.")
             >>> resp.text
