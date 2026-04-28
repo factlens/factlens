@@ -58,7 +58,7 @@ class FactlensFilter:
         context_key: Key to extract context from function arguments.
             Defaults to ``"context"``.
 
-    Example:
+    Examples:
         >>> filt = FactlensFilter()
         >>> # Register with a Semantic Kernel instance
         >>> kernel.add_filter("function_invocation", filt)
@@ -94,7 +94,7 @@ class FactlensFilter:
                 containing function arguments and result.
             next_handler: The next handler in the filter pipeline.
 
-        Example:
+        Examples:
             >>> # This method is called automatically by Semantic Kernel
             >>> # when registered as a function invocation filter.
         """
