@@ -58,7 +58,7 @@ class FactlensTool:
         factlens_model: Sentence-transformer model for factlens scoring.
             Defaults to ``DEFAULT_MODEL``.
 
-    Example:
+    Examples:
         >>> from factlens.integrations.crewai import FactlensTool
         >>> tool = FactlensTool()
         >>> # Agent uses the tool to verify its own output
@@ -109,7 +109,7 @@ class FactlensTool:
             A formatted string containing the verification result,
             including method, score, status, and explanation.
 
-        Example:
+        Examples:
             >>> tool = FactlensTool()
             >>> result = tool._run("What is 2+2?", "2+2 is 4.")
             >>> isinstance(result, str)
