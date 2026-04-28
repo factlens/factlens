@@ -92,7 +92,7 @@ Issues = "https://github.com/factlens/factlens/issues"
 Changelog = "https://github.com/factlens/factlens/blob/main/CHANGELOG.md"
 "Research (SGI)" = "https://arxiv.org/abs/2512.13771"
 "Research (DGI)" = "https://arxiv.org/abs/2602.13224"
-"Research (Confabulation Benchmark)" = "https://arxiv.org/abs/2603.13259"
+"Research (Confabulation)" = "https://arxiv.org/abs/2603.13259"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/factlens"]
