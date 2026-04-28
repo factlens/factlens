@@ -24,7 +24,7 @@ class LLMResponse:
         factlens_score: Optional factlens evaluation result attached
             after hallucination scoring.
 
-    Example:
+    Examples:
         >>> resp = LLMResponse(text="Hello!", model="gpt-4o", usage={})
         >>> resp.factlens_score is None
         True
@@ -44,7 +44,7 @@ class BaseLLMProvider(Protocol):
     ``FactlensScore`` to every response, enabling inline hallucination
     detection without changing application code.
 
-    Example:
+    Examples:
         >>> def use_provider(provider: BaseLLMProvider) -> None:
         ...     resp = provider.complete("Summarize this.", context="Source text.")
         ...     if resp.factlens_score and resp.factlens_score.flagged:
