@@ -163,7 +163,7 @@ def compute_dgi(
     Raises:
         ValueError: If question or response is empty.
 
-    Example:
+    Examples:
         >>> from factlens import compute_dgi
         >>> result = compute_dgi(
         ...     question="What causes seasons on Earth?",
@@ -217,7 +217,7 @@ class DGI:
     Use this class when evaluating multiple responses against the same
     reference direction. Supports both bundled and custom calibration.
 
-    Example:
+    Examples:
         >>> dgi = DGI()
         >>> result = dgi.score(
         ...     question="What is ML?",
