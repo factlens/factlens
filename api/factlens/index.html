@@ -1710,6 +1710,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#factlens-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attributes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factlens.DEFAULT_MODEL" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DEFAULT_MODEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factlens.VALIDATED_MODELS" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VALIDATED_MODELS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#factlens-classes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1720,6 +1759,17 @@
   
     <nav class="md-nav" aria-label="Classes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factlens.ModelInfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModelInfo
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#factlens.CalibrationResult" class="md-nav__link">
@@ -2101,6 +2151,14 @@ False
 &gt;&gt;&gt; score.method
 &#39;sgi&#39;
 </code></pre></div>
+<p>Embedding models:</p>
+<div class="language-text highlight"><pre><span></span><code>factlens defaults to ``all-mpnet-base-v2`` (768 dims), which was used
+for DGI calibration and the confabulation benchmark. For faster scoring,
+pass ``model=&quot;all-MiniLM-L6-v2&quot;`` (384 dims, ~5x faster).
+
+Any sentence-transformers model works. See ``factlens.VALIDATED_MODELS``
+for models with published AUROC numbers.
+</code></pre></div>
 
 
 <details class="references" open>
@@ -2124,9 +2182,106 @@ Marin (2026). Rotational Dynamics of Factual Constraint Processing. arXiv:2603.1
 
 
 
+<h3 id="factlens-attributes">Attributes<a href="#factlens-attributes" class="headerlink" title="Permanent link">&para;</a></h3>
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="factlens.DEFAULT_MODEL" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">DEFAULT_MODEL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;all-mpnet-base-v2&#39;</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#factlens.DEFAULT_MODEL" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Default sentence transformer model.</p>
+<p>Changed from <code>all-MiniLM-L6-v2</code> in v2026.4.28. The bundled DGI
+reference pairs and thresholds were calibrated with this model.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="factlens.VALIDATED_MODELS" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">VALIDATED_MODELS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModelInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;all-mpnet-base-v2&#39;</span><span class="p">:</span> <span class="n">ModelInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;all-mpnet-base-v2&#39;</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="mi">768</span><span class="p">,</span> <span class="n">params_m</span><span class="o">=</span><span class="mi">109</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Default. Used for DGI calibration (arXiv:2602.13224) and the confabulation benchmark. Best accuracy.&#39;</span><span class="p">),</span> <span class="s1">&#39;all-MiniLM-L6-v2&#39;</span><span class="p">:</span> <span class="n">ModelInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;all-MiniLM-L6-v2&#39;</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">params_m</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Used for SGI experiments (arXiv:2512.13771). 5x faster, half the memory. Good for latency-sensitive pipelines.&#39;</span><span class="p">)}</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#factlens.VALIDATED_MODELS" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Models tested in published factlens research.</p>
+<p>Any sentence-transformers model works, but these have validated
+threshold calibrations and published AUROC numbers.</p>
+
+    </div>
+
+</div>
 
 <h3 id="factlens-classes">Classes<a href="#factlens-classes" class="headerlink" title="Permanent link">&para;</a></h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="factlens.ModelInfo" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">ModelInfo</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dims</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">params_m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#factlens.ModelInfo" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Metadata for a validated embedding model.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 <div class="doc doc-object doc-class">
 
@@ -2517,7 +2672,11 @@ result = dgi.score(question="...", response="...")</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3410,7 +3569,7 @@ to avoid repeating the <code>model</code> parameter.</p>
   <blockquote>
 <blockquote>
 <blockquote>
-<p>sgi = SGI(model="all-MiniLM-L6-v2")
+<p>sgi = SGI(model="all-mpnet-base-v2")
 result = sgi.score(
 ...     question="What is X?",
 ...     context="X is Y.",
@@ -3449,7 +3608,11 @@ False</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
       </tbody>
@@ -3727,7 +3890,11 @@ False</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -4015,7 +4182,11 @@ optionally context.</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -4313,11 +4484,15 @@ len(results)
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Sentence transformer model name. Default <code>all-MiniLM-L6-v2</code>.</p>
+                <p>Sentence transformer model name. Default <code>all-mpnet-base-v2</code>.</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
       </tbody>
@@ -4483,7 +4658,7 @@ False</p>
 </span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        question: The input query.</span>
 </span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">        context: Source document, retrieved chunks, or reference text.</span>
 </span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        response: The LLM output to evaluate.</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        model: Sentence transformer model name. Default ``all-MiniLM-L6-v2``.</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        model: Sentence transformer model name. Default ``all-mpnet-base-v2``.</span>
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        SGIResult with raw score, normalized score, and flag status.</span>

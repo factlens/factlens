@@ -1918,7 +1918,7 @@ to avoid repeating the <code>model</code> parameter.</p>
   <blockquote>
 <blockquote>
 <blockquote>
-<p>sgi = SGI(model="all-MiniLM-L6-v2")
+<p>sgi = SGI(model="all-mpnet-base-v2")
 result = sgi.score(
 ...     question="What is X?",
 ...     context="X is Y.",
@@ -1957,7 +1957,11 @@ False</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="../#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
       </tbody>
@@ -2247,11 +2251,15 @@ False</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Sentence transformer model name. Default <code>all-MiniLM-L6-v2</code>.</p>
+                <p>Sentence transformer model name. Default <code>all-mpnet-base-v2</code>.</p>
               </div>
             </td>
             <td>
-                  <code><span title="factlens._internal.embeddings.DEFAULT_MODEL">DEFAULT_MODEL</span></code>
+                  <code><a class="autorefs autorefs-internal" title="DEFAULT_MODEL: str = 'all-mpnet-base-v2'
+
+  
+      module-attribute
+   (factlens._internal.embeddings.DEFAULT_MODEL)" href="../#factlens.DEFAULT_MODEL">DEFAULT_MODEL</a></code>
             </td>
           </tr>
       </tbody>
@@ -2417,7 +2425,7 @@ False</p>
 </span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        question: The input query.</span>
 </span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">        context: Source document, retrieved chunks, or reference text.</span>
 </span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        response: The LLM output to evaluate.</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        model: Sentence transformer model name. Default ``all-MiniLM-L6-v2``.</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        model: Sentence transformer model name. Default ``all-mpnet-base-v2``.</span>
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        SGIResult with raw score, normalized score, and flag status.</span>
