@@ -53,15 +53,15 @@ from factlens.score import DGIResult, FactlensScore, SGIResult
 from factlens.sgi import SGI, compute_sgi
 
 __all__ = [
-    "CalibrationResult",
     "DEFAULT_MODEL",
     "DGI",
+    "SGI",
+    "VALIDATED_MODELS",
+    "CalibrationResult",
     "DGIResult",
     "FactlensScore",
     "ModelInfo",
-    "SGI",
     "SGIResult",
-    "VALIDATED_MODELS",
     "__version__",
     "calibrate",
     "compute_dgi",
