@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/FactLens_header_01.png" alt="factlens" width="800">
+  <img src="https://raw.githubusercontent.com/factlens/factlens/main/docs/assets/FactLens_header_01.png" alt="factlens" width="800">
 
 
 # Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable.
