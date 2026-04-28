@@ -61,7 +61,7 @@ def compute_sgi(
     Raises:
         ValueError: If any input string is empty.
 
-    Example:
+    Examples:
         >>> from factlens import compute_sgi
         >>> result = compute_sgi(
         ...     question="What is the capital of France?",
@@ -125,7 +125,7 @@ class SGI:
     Use this class when evaluating multiple responses with the same model
     to avoid repeating the ``model`` parameter.
 
-    Example:
+    Examples:
         >>> sgi = SGI(model="all-mpnet-base-v2")
         >>> result = sgi.score(
         ...     question="What is X?",
