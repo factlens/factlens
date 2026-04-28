@@ -61,7 +61,7 @@ class FactlensOpenAI:
         factlens_model: Sentence-transformer model for factlens scoring.
             Defaults to ``DEFAULT_MODEL``.
 
-    Example:
+    Examples:
         >>> llm = FactlensOpenAI(api_key="sk-...")
         >>> resp = llm.chat("Summarize this document.", context="The document text.")
         >>> print(resp.factlens_score.explanation)
@@ -99,7 +99,7 @@ class FactlensOpenAI:
         Raises:
             openai.OpenAIError: If the API call fails.
 
-        Example:
+        Examples:
             >>> llm = FactlensOpenAI(api_key="sk-...")
             >>> resp = llm.chat("What causes tides?")
             >>> resp.text
