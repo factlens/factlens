@@ -1732,28 +1732,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#factlens.integrations.langchain.FactlensCallback--use-as-a-langchain-callback" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use as a LangChain callback
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.langchain.FactlensCallback--inspect-scores-after-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inspect scores after execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#factlens.integrations.langchain.FactlensCallback-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1819,39 +1797,6 @@
   
     <nav class="md-nav" aria-label="FactlensEvaluator">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.langchain.FactlensEvaluator--typically-used-with-langsmith-evaluate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Typically used with LangSmith evaluate():
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.langchain.FactlensEvaluator--from-langsmith-import-evaluate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        from langsmith import evaluate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.langchain.FactlensEvaluator--evaluatechain-datadataset-evaluatorsevaluator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        evaluate(chain, data="dataset", evaluators=[evaluator])
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#factlens.integrations.langchain.FactlensEvaluator-functions" class="md-nav__link">
@@ -2026,23 +1971,17 @@ Defaults to <code>"context"</code>.</p>
     </table>
 
 
-<details class="example" open>
-  <summary>Example</summary>
-  <blockquote>
-<blockquote>
-<blockquote>
-<p>cb = FactlensCallback()</p>
-<h5 id="factlens.integrations.langchain.FactlensCallback--use-as-a-langchain-callback">Use as a LangChain callback<a class="headerlink" href="#factlens.integrations.langchain.FactlensCallback--use-as-a-langchain-callback" title="Permanent link">&para;</a></h5>
-<p>from langchain_openai import ChatOpenAI
-llm = ChatOpenAI(callbacks=[cb])
-result = llm.invoke("Summarize the document.")</p>
-<h5 id="factlens.integrations.langchain.FactlensCallback--inspect-scores-after-execution">Inspect scores after execution<a class="headerlink" href="#factlens.integrations.langchain.FactlensCallback--inspect-scores-after-execution" title="Permanent link">&para;</a></h5>
-<p>for run_id, score in cb.scores.items():
-...     print(f"{run_id}: {score.explanation}")</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</details>
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="language-pycon highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">cb</span> <span class="o">=</span> <span class="n">FactlensCallback</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Use as a LangChain callback</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">cb</span><span class="p">])</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s2">&quot;Summarize the document.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Inspect scores after execution</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">run_id</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">cb</span><span class="o">.</span><span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">run_id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">explanation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+
 
 
 
@@ -2648,19 +2587,13 @@ Defaults to <code>"context"</code>.</p>
     </table>
 
 
-<details class="example" open>
-  <summary>Example</summary>
-  <blockquote>
-<blockquote>
-<blockquote>
-<p>evaluator = FactlensEvaluator()</p>
-<h5 id="factlens.integrations.langchain.FactlensEvaluator--typically-used-with-langsmith-evaluate">Typically used with LangSmith evaluate():<a class="headerlink" href="#factlens.integrations.langchain.FactlensEvaluator--typically-used-with-langsmith-evaluate" title="Permanent link">&para;</a></h5>
-<h5 id="factlens.integrations.langchain.FactlensEvaluator--from-langsmith-import-evaluate">from langsmith import evaluate<a class="headerlink" href="#factlens.integrations.langchain.FactlensEvaluator--from-langsmith-import-evaluate" title="Permanent link">&para;</a></h5>
-<h5 id="factlens.integrations.langchain.FactlensEvaluator--evaluatechain-datadataset-evaluatorsevaluator">evaluate(chain, data="dataset", evaluators=[evaluator])<a class="headerlink" href="#factlens.integrations.langchain.FactlensEvaluator--evaluatechain-datadataset-evaluatorsevaluator" title="Permanent link">&para;</a></h5>
-</blockquote>
-</blockquote>
-</blockquote>
-</details>
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="language-pycon highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">FactlensEvaluator</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Typically used with LangSmith evaluate():</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># from langsmith import evaluate</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># evaluate(chain, data=&quot;dataset&quot;, evaluators=[evaluator])</span>
+</span></code></pre></div>
+
 
 
 
@@ -2806,19 +2739,13 @@ or context for SGI evaluation.</p>
     </table>
 
 
-<details class="example" open>
-  <summary>Example</summary>
-  <blockquote>
-<blockquote>
-<blockquote>
-<p>evaluator = FactlensEvaluator()
-result = evaluator.evaluate_run(run, example)
-result.key
-'factlens'</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</details>
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="language-pycon highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">FactlensEvaluator</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate_run</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">example</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">key</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">&#39;factlens&#39;</span>
+</span></code></pre></div>
+
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/factlens/integrations/langchain/evaluator.py</code></summary>
@@ -2924,7 +2851,7 @@ result.key
 </span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">        An ``EvaluationResult`` with key ``&quot;factlens&quot;``, the normalized</span>
 </span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">        score, and a comment containing the explanation.</span>
 </span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a>
-</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">    Example:</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">    Examples:</span>
 </span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="sd">        &gt;&gt;&gt; evaluator = FactlensEvaluator()</span>
 </span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="sd">        &gt;&gt;&gt; result = evaluator.evaluate_run(run, example)</span>
 </span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="sd">        &gt;&gt;&gt; result.key</span>

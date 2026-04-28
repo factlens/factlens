@@ -1754,28 +1754,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#factlens.integrations.semantic_kernel.filter.FactlensFilter--register-with-a-semantic-kernel-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Register with a Semantic Kernel instance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.semantic_kernel.filter.FactlensFilter--after-invocation-inspect-scores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        After invocation, inspect scores:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#factlens.integrations.semantic_kernel.filter.FactlensFilter-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1792,28 +1770,6 @@
     <span class="md-ellipsis">
       
         on_function_invocation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--this-method-is-called-automatically-by-semantic-kernel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        This method is called automatically by Semantic Kernel
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--when-registered-as-a-function-invocation-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        when registered as a function invocation filter.
       
     </span>
   </a>
@@ -2013,21 +1969,15 @@ Defaults to <code>"context"</code>.</p>
     </table>
 
 
-<details class="example" open>
-  <summary>Example</summary>
-  <blockquote>
-<blockquote>
-<blockquote>
-<p>filt = FactlensFilter()</p>
-<h5 id="factlens.integrations.semantic_kernel.filter.FactlensFilter--register-with-a-semantic-kernel-instance">Register with a Semantic Kernel instance<a class="headerlink" href="#factlens.integrations.semantic_kernel.filter.FactlensFilter--register-with-a-semantic-kernel-instance" title="Permanent link">&para;</a></h5>
-<p>kernel.add_filter("function_invocation", filt)</p>
-<h5 id="factlens.integrations.semantic_kernel.filter.FactlensFilter--after-invocation-inspect-scores">After invocation, inspect scores:<a class="headerlink" href="#factlens.integrations.semantic_kernel.filter.FactlensFilter--after-invocation-inspect-scores" title="Permanent link">&para;</a></h5>
-<p>for fn_name, score in filt.scores:
-...     print(f"{fn_name}: {score.explanation}")</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</details>
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="language-pycon highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">filt</span> <span class="o">=</span> <span class="n">FactlensFilter</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Register with a Semantic Kernel instance</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">kernel</span><span class="o">.</span><span class="n">add_filter</span><span class="p">(</span><span class="s2">&quot;function_invocation&quot;</span><span class="p">,</span> <span class="n">filt</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># After invocation, inspect scores:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">fn_name</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">filt</span><span class="o">.</span><span class="n">scores</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fn_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">explanation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+
 
 
 
@@ -2141,17 +2091,11 @@ containing function arguments and result.</p>
     </table>
 
 
-<details class="example" open>
-  <summary>Example</summary>
-  <blockquote>
-<blockquote>
-<blockquote>
-<h6 id="factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--this-method-is-called-automatically-by-semantic-kernel">This method is called automatically by Semantic Kernel<a class="headerlink" href="#factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--this-method-is-called-automatically-by-semantic-kernel" title="Permanent link">&para;</a></h6>
-<h6 id="factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--when-registered-as-a-function-invocation-filter">when registered as a function invocation filter.<a class="headerlink" href="#factlens.integrations.semantic_kernel.filter.FactlensFilter.on_function_invocation--when-registered-as-a-function-invocation-filter" title="Permanent link">&para;</a></h6>
-</blockquote>
-</blockquote>
-</blockquote>
-</details>
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="language-pycon highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># This method is called automatically by Semantic Kernel</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="c1"># when registered as a function invocation filter.</span>
+</span></code></pre></div>
+
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/factlens/integrations/semantic_kernel/filter.py</code></summary>
@@ -2243,7 +2187,7 @@ containing function arguments and result.</p>
 </span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">            containing function arguments and result.</span>
 </span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        next_handler: The next handler in the filter pipeline.</span>
 </span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    Example:</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    Examples:</span>
 </span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">        &gt;&gt;&gt; # This method is called automatically by Semantic Kernel</span>
 </span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        &gt;&gt;&gt; # when registered as a function invocation filter.</span>
 </span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">    &quot;&quot;&quot;</span>
