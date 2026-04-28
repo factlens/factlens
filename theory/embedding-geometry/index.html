@@ -2166,7 +2166,7 @@
 <h1 id="embedding-geometry">Embedding Geometry<a class="headerlink" href="#embedding-geometry" title="Permanent link">&para;</a></h1>
 <p>This page provides the mathematical foundations underlying factlens. We cover the geometry of embedding spaces, the distributional hypothesis that makes them work, and the hyperspherical structure that DGI exploits for directional statistics.</p>
 <h2 id="embedding-spaces-and-mathbbrn">Embedding Spaces and <span class="arithmatex">\(\mathbb{R}^n\)</span><a class="headerlink" href="#embedding-spaces-and-mathbbrn" title="Permanent link">&para;</a></h2>
-<p>A sentence-transformer model <span class="arithmatex">\(\phi\)</span> maps variable-length text strings to fixed-dimensional vectors in <span class="arithmatex">\(\mathbb{R}^n\)</span>. For the default model <code>all-MiniLM-L6-v2</code>, <span class="arithmatex">\(n = 384\)</span>. For <code>all-mpnet-base-v2</code>, <span class="arithmatex">\(n = 768\)</span>.</p>
+<p>A sentence-transformer model <span class="arithmatex">\(\phi\)</span> maps variable-length text strings to fixed-dimensional vectors in <span class="arithmatex">\(\mathbb{R}^n\)</span>. For the default model <code>all-mpnet-base-v2</code>, <span class="arithmatex">\(n = 768\)</span>. For the smaller <code>all-MiniLM-L6-v2</code>, <span class="arithmatex">\(n = 384\)</span>.</p>
 <div class="arithmatex">\[
 \phi: \mathcal{T} \to \mathbb{R}^n
 \]</div>
@@ -2233,19 +2233,19 @@ d(\mathbf{u}, \mathbf{v}) = \sqrt{2(1 - \cos\theta)}
 <div class="arithmatex">\[
 S^{n-1} = \{\mathbf{v} \in \mathbb{R}^n : \|\mathbf{v}\| = 1\}
 \]</div>
-<p>This is an <span class="arithmatex">\((n-1)\)</span>-dimensional manifold embedded in <span class="arithmatex">\(\mathbb{R}^n\)</span>. For <span class="arithmatex">\(n = 384\)</span>, the hypersphere <span class="arithmatex">\(S^{383}\)</span> is the space where DGI's directional statistics operate.</p>
+<p>This is an <span class="arithmatex">\((n-1)\)</span>-dimensional manifold embedded in <span class="arithmatex">\(\mathbb{R}^n\)</span>. For the default <span class="arithmatex">\(n = 768\)</span>, the hypersphere <span class="arithmatex">\(S^{767}\)</span> is the space where DGI's directional statistics operate.</p>
 <h3 id="properties-of-sn-1">Properties of <span class="arithmatex">\(S^{n-1}\)</span><a class="headerlink" href="#properties-of-sn-1" title="Permanent link">&para;</a></h3>
 <p>The unit hypersphere has several properties relevant to factlens:</p>
 <p><strong>Surface area.</strong> The surface area of <span class="arithmatex">\(S^{n-1}\)</span> is:</p>
 <div class="arithmatex">\[
 A_{n-1} = \frac{2\pi^{n/2}}{\Gamma(n/2)}
 \]</div>
-<p>For <span class="arithmatex">\(n = 384\)</span>, this is an astronomically large number, reflecting the vast amount of "room" on a high-dimensional sphere.</p>
+<p>For <span class="arithmatex">\(n = 768\)</span>, this is an astronomically large number, reflecting the vast amount of "room" on a high-dimensional sphere.</p>
 <p><strong>Geodesic distance.</strong> The shortest path between two points on <span class="arithmatex">\(S^{n-1}\)</span> is the great-circle arc. The geodesic (angular) distance is:</p>
 <div class="arithmatex">\[
 d_{\text{geo}}(\mathbf{u}, \mathbf{v}) = \arccos(\langle \mathbf{u}, \mathbf{v} \rangle)
 \]</div>
-<p><strong>Uniform distribution.</strong> A uniform distribution on <span class="arithmatex">\(S^{n-1}\)</span> places equal probability density at every point. Two random unit vectors drawn uniformly from <span class="arithmatex">\(S^{383}\)</span> will have expected cosine similarity close to 0, with variance <span class="arithmatex">\(\approx 1/n\)</span>. This concentration phenomenon is key to understanding why DGI works.</p>
+<p><strong>Uniform distribution.</strong> A uniform distribution on <span class="arithmatex">\(S^{n-1}\)</span> places equal probability density at every point. Two random unit vectors drawn uniformly from <span class="arithmatex">\(S^{767}\)</span> will have expected cosine similarity close to 0, with variance <span class="arithmatex">\(\approx 1/n\)</span>. This concentration phenomenon is key to understanding why DGI works.</p>
 <h2 id="curse-of-dimensionality">Curse of Dimensionality<a class="headerlink" href="#curse-of-dimensionality" title="Permanent link">&para;</a></h2>
 <p>In high-dimensional spaces, distance metrics behave counterintuitively. Several phenomena are relevant to factlens:</p>
 <h3 id="distance-concentration">Distance Concentration<a class="headerlink" href="#distance-concentration" title="Permanent link">&para;</a></h3>
@@ -2259,7 +2259,7 @@ d_{\text{geo}}(\mathbf{u}, \mathbf{v}) = \arccos(\langle \mathbf{u}, \mathbf{v} 
 <div class="arithmatex">\[
 \mathbb{E}[\cos\theta] = 0, \quad \text{Var}[\cos\theta] \approx \frac{1}{n}
 \]</div>
-<p>For <span class="arithmatex">\(n = 384\)</span>, this gives <span class="arithmatex">\(\sigma \approx 0.051\)</span>. This means that cosine similarities of <span class="arithmatex">\(\pm 0.1\)</span> are already <span class="arithmatex">\(\approx 2\sigma\)</span> deviations from the mean --- statistically significant. DGI exploits this: a cosine similarity of 0.30 between the displacement direction and the reference direction is a <span class="arithmatex">\(\approx 6\sigma\)</span> event under the null hypothesis of random direction, giving high confidence in the grounding signal.</p>
+<p>For <span class="arithmatex">\(n = 768\)</span>, this gives <span class="arithmatex">\(\sigma \approx 0.036\)</span>. This means that cosine similarities of <span class="arithmatex">\(\pm 0.1\)</span> are already <span class="arithmatex">\(\approx 2\sigma\)</span> deviations from the mean --- statistically significant. DGI exploits this: a cosine similarity of 0.30 between the displacement direction and the reference direction is a <span class="arithmatex">\(\approx 6\sigma\)</span> event under the null hypothesis of random direction, giving high confidence in the grounding signal.</p>
 <h3 id="the-hub-phenomenon">The "Hub" Phenomenon<a class="headerlink" href="#the-hub-phenomenon" title="Permanent link">&para;</a></h3>
 <p>In high-dimensional spaces, some points become "hubs" that are nearest neighbors of disproportionately many other points (Radovanovic et al., 2010)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. Sentence transformer embeddings exhibit this phenomenon to some degree. factlens is robust to hubness because:</p>
 <ul>

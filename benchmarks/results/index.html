@@ -1974,7 +1974,7 @@
 
 
 <h1 id="benchmark-results">Benchmark Results<a class="headerlink" href="#benchmark-results" title="Permanent link">&para;</a></h1>
-<p>All results use the default embedding model (<code>all-MiniLM-L6-v2</code>, 384 dimensions) unless otherwise noted. AUROC is the primary metric.</p>
+<p>All results use the default embedding model (<code>all-mpnet-base-v2</code>, 768 dimensions) unless otherwise noted. AUROC is the primary metric.</p>
 <h2 id="headline-results">Headline Results<a class="headerlink" href="#headline-results" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2180,7 +2180,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Model recommendation</p>
-<p><code>all-MiniLM-L6-v2</code> provides the best tradeoff between accuracy and speed. The larger <code>all-mpnet-base-v2</code> offers marginal improvement (+0.006 AUROC) at 2.4x the inference cost.</p>
+<p><code>all-mpnet-base-v2</code> (the default) provides the best tradeoff between accuracy and discrimination. For latency-sensitive deployments where ~5 ms matters, the smaller <code>all-MiniLM-L6-v2</code> trades 0.006 AUROC for 2.4x faster inference.</p>
 </div>
 <h2 id="calibration-size-sensitivity">Calibration Size Sensitivity<a class="headerlink" href="#calibration-size-sensitivity" title="Permanent link">&para;</a></h2>
 <p>How many calibration pairs are needed for good domain calibration?</p>

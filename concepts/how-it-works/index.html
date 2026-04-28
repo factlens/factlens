@@ -1965,9 +1965,9 @@
     C["Context&lt;br/&gt;phi(ctx)"] -.-&gt;|"SGI: distance ratio"| R
     Q -.-&gt;|"DGI: direction"| R</code></pre>
 <h2 id="the-embedding-space">The Embedding Space<a class="headerlink" href="#the-embedding-space" title="Permanent link">&para;</a></h2>
-<p>factlens uses sentence transformers (default: <code>all-MiniLM-L6-v2</code>) to map text into <span class="arithmatex">\(\mathbb{R}^{384}\)</span>. In this space:</p>
+<p>factlens uses sentence transformers (default: <code>all-mpnet-base-v2</code>) to map text into <span class="arithmatex">\(\mathbb{R}^{768}\)</span>. In this space:</p>
 <ul>
-<li>Each text becomes a 384-dimensional vector</li>
+<li>Each text becomes a 768-dimensional vector</li>
 <li>Semantic similarity correlates with geometric proximity</li>
 <li>The space has rich structure: clusters for topics, gradients for specificity, and characteristic directions for question-answer relationships</li>
 </ul>

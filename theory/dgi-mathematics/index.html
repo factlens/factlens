@@ -2422,7 +2422,7 @@ C_n(\kappa) = \frac{\kappa^{n/2 - 1}}{(2\pi)^{n/2} I_{n/2 - 1}(\kappa)}
 <li>On <span class="arithmatex">\(S^1\)</span> (the circle): vMF reduces to the <strong>von Mises distribution</strong>, the circular analog of the Gaussian.</li>
 <li>On <span class="arithmatex">\(S^2\)</span> (the 2-sphere): vMF is the <strong>Fisher distribution</strong>, used extensively in paleomagnetic studies and geological directional data.</li>
 </ul>
-<p>In high dimensions (<span class="arithmatex">\(n = 384\)</span>), the vMF distribution concentrates rapidly for even moderate <span class="arithmatex">\(\kappa\)</span> values, due to the vast surface area of <span class="arithmatex">\(S^{n-1}\)</span>.</p>
+<p>In high dimensions (<span class="arithmatex">\(n = 768\)</span>), the vMF distribution concentrates rapidly for even moderate <span class="arithmatex">\(\kappa\)</span> values, due to the vast surface area of <span class="arithmatex">\(S^{n-1}\)</span>.</p>
 <h2 id="mean-direction-estimation-mle">Mean Direction Estimation (MLE)<a class="headerlink" href="#mean-direction-estimation-mle" title="Permanent link">&para;</a></h2>
 <p>Given <span class="arithmatex">\(N\)</span> independent samples <span class="arithmatex">\(\hat{\boldsymbol{\delta}}_1, \ldots, \hat{\boldsymbol{\delta}}_N\)</span> from <span class="arithmatex">\(\text{vMF}(\boldsymbol{\mu}, \kappa)\)</span>, the maximum-likelihood estimate of <span class="arithmatex">\(\boldsymbol{\mu}\)</span> is:</p>
 <div class="arithmatex">\[
@@ -2450,7 +2450,7 @@ A_n(\kappa) = \bar{R}
 <div class="arithmatex">\[
 \hat{\kappa} \approx \frac{\bar{R}(n - \bar{R}^2)}{1 - \bar{R}^2}
 \]</div>
-<p>This approximation is accurate for moderate to large <span class="arithmatex">\(n\)</span> and avoids the computational cost of evaluating Bessel functions. For <span class="arithmatex">\(n = 384\)</span> (our default embedding dimension), the approximation error is negligible.</p>
+<p>This approximation is accurate for moderate to large <span class="arithmatex">\(n\)</span> and avoids the computational cost of evaluating Bessel functions. For <span class="arithmatex">\(n = 768\)</span> (our default embedding dimension), the approximation error is negligible.</p>
 <h3 id="interpretation-of-hatkappa">Interpretation of <span class="arithmatex">\(\hat{\kappa}\)</span><a class="headerlink" href="#interpretation-of-hatkappa" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2498,12 +2498,12 @@ A_n(\kappa) = \bar{R}
 <div class="arithmatex">\[
 \mathbb{E}_{\text{uniform}}[\text{DGI}] = \mathbb{E}[\hat{\boldsymbol{\delta}}^\top \hat{\boldsymbol{\mu}}] = 0
 \]</div>
-<p>with variance <span class="arithmatex">\(\approx 1/n\)</span>. For <span class="arithmatex">\(n = 384\)</span>, the standard deviation is <span class="arithmatex">\(\approx 0.051\)</span>.</p>
+<p>with variance <span class="arithmatex">\(\approx 1/n\)</span>. For <span class="arithmatex">\(n = 768\)</span>, the standard deviation is <span class="arithmatex">\(\approx 0.036\)</span>.</p>
 <p>Under the alternative hypothesis that the displacement is drawn from <span class="arithmatex">\(\text{vMF}(\hat{\boldsymbol{\mu}}, \kappa)\)</span>:</p>
 <div class="arithmatex">\[
 \mathbb{E}_{\text{grounded}}[\text{DGI}] = A_n(\kappa) = \frac{I_{n/2}(\kappa)}{I_{n/2-1}(\kappa)}
 \]</div>
-<p>For well-calibrated domains (<span class="arithmatex">\(\kappa \geq 10\)</span>, <span class="arithmatex">\(n = 384\)</span>), <span class="arithmatex">\(A_n(\kappa) \approx 1 - (n-1)/(2\kappa)\)</span>, which is close to 1.</p>
+<p>For well-calibrated domains (<span class="arithmatex">\(\kappa \geq 10\)</span>, <span class="arithmatex">\(n = 768\)</span>), <span class="arithmatex">\(A_n(\kappa) \approx 1 - (n-1)/(2\kappa)\)</span>, which is close to 1.</p>
 <p>The DGI threshold of 0.30 is approximately <span class="arithmatex">\(6\sigma\)</span> above the null hypothesis mean, providing strong statistical confidence.</p>
 <h2 id="linear-normalization">Linear Normalization<a class="headerlink" href="#linear-normalization" title="Permanent link">&para;</a></h2>
 <p>The DGI score lies in <span class="arithmatex">\([-1, 1]\)</span> (the range of cosine similarity). The linear normalization maps this to <span class="arithmatex">\([0, 1]\)</span>:</p>
