@@ -243,9 +243,7 @@ def _build_parser() -> argparse.ArgumentParser:
     check_parser.add_argument("--question", required=True, help="The input question.")
     check_parser.add_argument("--response", required=True, help="The LLM response to evaluate.")
     check_parser.add_argument("--context", default=None, help="Source context (enables SGI).")
-    check_parser.add_argument(
-        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
-    )
+    check_parser.add_argument("--model", default=DEFAULT_MODEL, help="Sentence transformer model.")
 
     # ── evaluate ───────────────────────────────────────────────────────────
     eval_parser = subparsers.add_parser(
@@ -254,9 +252,7 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     eval_parser.add_argument("input_csv", help="Input CSV with question,response[,context].")
     eval_parser.add_argument("--output", required=True, help="Output CSV path.")
-    eval_parser.add_argument(
-        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
-    )
+    eval_parser.add_argument("--model", default=DEFAULT_MODEL, help="Sentence transformer model.")
     eval_parser.add_argument("--reference-csv", default=None, help="DGI calibration CSV path.")
 
     # ── calibrate ──────────────────────────────────────────────────────────
@@ -268,9 +264,7 @@ def _build_parser() -> argparse.ArgumentParser:
     cal_parser.add_argument(
         "--output", required=True, help="Output JSON path for calibration data."
     )
-    cal_parser.add_argument(
-        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
-    )
+    cal_parser.add_argument("--model", default=DEFAULT_MODEL, help="Sentence transformer model.")
 
     # ── benchmark ──────────────────────────────────────────────────────────
     bench_parser = subparsers.add_parser(
@@ -282,9 +276,7 @@ def _build_parser() -> argparse.ArgumentParser:
         default="cert-framework/human-confabulation-benchmark",
         help="HuggingFace dataset name.",
     )
-    bench_parser.add_argument(
-        "--model", default=DEFAULT_MODEL, help="Sentence transformer model."
-    )
+    bench_parser.add_argument("--model", default=DEFAULT_MODEL, help="Sentence transformer model.")
 
     return parser
 
