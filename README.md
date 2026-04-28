@@ -294,17 +294,17 @@ Domain-specific calibration typically reaches AUROC 0.90-0.99. The confabulation
 
 ## Research
 
-factlens implements the methods described in three peer-reviewed papers:
+factlens implements the methods described in the following papers:
 
 1. **Semantic Grounding Index (SGI)**
    Marin, J. (2025). *Semantic Grounding Index for LLM Hallucination Detection.*
    [arXiv:2512.13771](https://arxiv.org/abs/2512.13771)
 
-2. **Directional Grounding Index (DGI)**
+2. **Taxonomy of Hallucinations and Directional Grounding Index (DGI)**
    Marin, J. (2026). *A Geometric Taxonomy of Hallucinations in Large Language Models.*
    [arXiv:2602.13224](https://arxiv.org/abs/2602.13224)
 
-3. **Confabulation Benchmark**
+3. **Mechanistic Interpretability**
    Marin, J. (2026). *Rotational Dynamics of Factual Constraint Processing in Large Language Models.*
    [arXiv:2603.13259](https://arxiv.org/abs/2603.13259)
 
