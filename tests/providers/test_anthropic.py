@@ -47,7 +47,7 @@ class TestFactlensAnthropicChat:
                         lambda self, **kw: (
                             setattr(self, "_client", mock_anthropic_client)
                             or setattr(self, "_model", "claude-sonnet-4-20250514")
-                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                            or setattr(self, "_factlens_model", "all-mpnet-base-v2")
                         ),
                     ),
                     patch("factlens.providers.anthropic.evaluate") as mock_eval,
@@ -72,7 +72,7 @@ class TestFactlensAnthropicChat:
                         lambda self, **kw: (
                             setattr(self, "_client", mock_anthropic_client)
                             or setattr(self, "_model", "claude-sonnet-4-20250514")
-                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                            or setattr(self, "_factlens_model", "all-mpnet-base-v2")
                         ),
                     ),
                     patch("factlens.providers.anthropic.evaluate") as mock_eval,

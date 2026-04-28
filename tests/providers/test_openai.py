@@ -21,7 +21,7 @@ class TestFactlensOpenAIInit:
         ):
             llm = openai_mod.FactlensOpenAI(api_key="sk-test-key")
             assert llm._model == "gpt-4o"
-            assert llm._factlens_model == "all-MiniLM-L6-v2"
+            assert llm._factlens_model == "all-mpnet-base-v2"
 
     def test_init_custom_model(self, mock_openai_client: MagicMock) -> None:
         with patch.object(

@@ -61,7 +61,7 @@ class TestFactlensGeminiChat:
                         lambda self, **kw: (
                             setattr(self, "_client", mock_google_client)
                             or setattr(self, "_model", "gemini-pro")
-                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                            or setattr(self, "_factlens_model", "all-mpnet-base-v2")
                         ),
                     ),
                     patch("factlens.providers.google.evaluate") as mock_eval,
@@ -89,7 +89,7 @@ class TestFactlensGeminiChat:
                         lambda self, **kw: (
                             setattr(self, "_client", mock_google_client)
                             or setattr(self, "_model", "gemini-pro")
-                            or setattr(self, "_factlens_model", "all-MiniLM-L6-v2")
+                            or setattr(self, "_factlens_model", "all-mpnet-base-v2")
                         ),
                     ),
                     patch("factlens.providers.google.evaluate") as mock_eval,
