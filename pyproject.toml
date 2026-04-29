@@ -143,7 +143,8 @@ known-first-party = ["factlens"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = ["D", "ANN", "T20"]          # Relaxed for tests
 "examples/**/*.py" = ["D", "ANN", "T20"]       # Relaxed for examples
-"benchmarks/**/*.py" = ["D", "ANN", "T20"]
+"examples/**/*.ipynb" = ["D", "ANN", "T20"]    # Relaxed for notebooks
+"benchmarks/**/*.py" = ["D", "ANN", "T20"]     # Relaxed for benchmarks
 "src/factlens/cli/**/*.py" = ["T20"]           # CLI needs print
 
 # ── mypy (strict) ───────────────────────────────────────────────────────────
